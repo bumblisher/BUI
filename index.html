@@ -64,11 +64,11 @@
                 <ul class="tab_main_list">
                     <li><a href="#">타이틀</a><button class="close"></button></li>
                     <li><a href="#">타이틀</a><button class="close"></button></li>
-                    <li><a href="#" class="on">백종오의힘</a><button class="close"></button></li>
+                    <li><a href="#" class="on">Form요소</a><button class="close"></button></li>
                 </ul>
                 <div class="tit_main">
-                    <h2>백종오의힘</h2>
-                    <p>백종오의힘을 보여줘</p>
+                    <h2>Form요소</h2>
+                    <p>Form요소의 스타일을 설정합니다.</p>
                 </div>
                 <div class="ly_content">
                     <div class="content">
@@ -77,15 +77,15 @@
                             <ul>
                                 <li>
                                     <p class="tit">Defult</p>
-                                    <input type="text">
+                                    <input type="text" class="ipt_text">
                                 </li>
                                 <li>
                                     <p class="tit">readonly</p>
-                                    <input type="text" readonly="readonly">
+                                    <input type="text" class="ipt_text" readonly="readonly">
                                 </li>
                                 <li>
                                     <p class="tit">disabled</p>
-                                    <input type="text" disabled="disabled">
+                                    <input type="text" class="ipt_text" disabled="disabled">
                                 </li>
                             </ul>
                         </div>
@@ -94,15 +94,15 @@
                             <ul>
                                 <li>
                                     <p class="tit">Defult</p>
-                                    <input type="search">
+                                    <input type="search" class="ipt_search">
                                 </li>
                                 <li>
                                     <p class="tit">readonly</p>
-                                    <input type="search" readonly="readonly">
+                                    <input type="search" class="ipt_search" readonly="readonly">
                                 </li>
                                 <li>
                                     <p class="tit">disabled</p>
-                                    <input type="search" disabled="disabled">
+                                    <input type="search" class="ipt_search" disabled="disabled">
                                 </li>
                             </ul>
                         </div>
@@ -111,15 +111,15 @@
                             <ul>
                                 <li>
                                     <p class="tit">Defult</p>
-                                    <input type="password">
+                                    <input type="password" class="ipt_password">
                                 </li>
                                 <li>
                                     <p class="tit">readonly</p>
-                                    <input type="password" readonly="readonly">
+                                    <input type="password" class="ipt_password" readonly="readonly">
                                 </li>
                                 <li>
                                     <p class="tit">disabled</p>
-                                    <input type="password" disabled="disabled">
+                                    <input type="password" class="ipt_password" disabled="disabled">
                                 </li>
                             </ul>
                         </div>
@@ -128,7 +128,7 @@
                             <ul>
                                 <li>
                                     <p class="tit">Defult</p>
-                                    <select name="" id="">
+                                    <select name="" id="" class="select">
                                         <option value="opt1">선택01</option>
                                         <option value="opt2">선택02</option>
                                         <option value="opt3">선택03</option>
@@ -136,7 +136,7 @@
                                 </li>
                                 <li>
                                     <p class="tit">disabled</p>
-                                    <select name="" id="" disabled>
+                                    <select name="" id="" class="select" disabled="disabled">
                                         <option value="opt1">선택01</option>
                                         <option value="opt2">선택02</option> 
                                         <option value="opt3">선택03</option>
@@ -149,39 +149,80 @@
                             <ul>
                                 <li>
                                     <p class="tit">Defult</p>
-                                    <label>
+                                    <label class="ipt_check">
                                         <input type="checkbox" name="" id="">
                                         <span>check_option01</span>
                                     </label>
                                 </li>
+                                <ul class="list_check">
+                                    <li>
+                                        <label class="ipt_check">
+                                            <input type="checkbox" name="list_checkbox" id="">
+                                            <span>check_option01</span>
+                                        </label>
+                                    </li>
+                                    <li>
+                                        <p class="tit">List</p>
+                                        <label class="ipt_check">
+                                            <input type="checkbox" name="list_checkbox" id="">
+                                            <span>check_option02</span>
+                                        </label>
+                                    </li>
+                                    <li>
+                                        <label class="ipt_check">
+                                            <input type="checkbox" name="list_checkbox" id="">
+                                            <span>check_option03</span>
+                                        </label>
+                                    </li>
+                                </ul>
                                 <li>
                                     <p class="tit">disabled</p>
-                                    <select name="" id="" disabled>
-                                        <option value="opt1">선택01</option>
-                                        <option value="opt2">선택02</option>
-                                        <option value="opt3">선택03</option>
-                                    </select>
+                                    <label class="ipt_check">
+                                        <input type="checkbox" name="" id="" disabled="disabled">
+                                        <span>check_option01</span>
+                                    </label>
                                 </li>
                             </ul>
                         </div>
                         <div class="grp_component">
-                            <p class="title">Radiobox</p>
+                            <p class="title">Radio</p>
                             <ul>
                                 <li>
                                     <p class="tit">Defult</p>
-                                    <select name="" id="">
-                                        <option value="opt1">선택01</option>
-                                        <option value="opt2">선택02</option>
-                                        <option value="opt3">선택03</option>
-                                    </select>
+                                    <label class="ipt_radio">
+                                        <input type="radio" name="" id="">
+                                        <span>radio_option01</span>
+                                    </label>
+                                </li>
+                                <li>
+                                    <p class="tit">List</p>
+                                    <ul class="list_radio">
+                                        <li>
+                                            <label class="ipt_radio">
+                                                <input type="radio" name="list_radio" id="">
+                                                <span>radio_option01</span>
+                                            </label>
+                                        </li>
+                                        <li>
+                                            <label class="ipt_radio">
+                                                <input type="radio" name="list_radio" id="">
+                                                <span>radio_option02</span>
+                                            </label>
+                                        </li>
+                                        <li>
+                                            <label class="ipt_radio">
+                                                <input type="radio" name="list_radio" id="">
+                                                <span>radio_option03</span>
+                                            </label>
+                                        </li>
+                                    </ul>
                                 </li>
                                 <li>
                                     <p class="tit">disabled</p>
-                                    <select name="" id="" disabled>
-                                        <option value="opt1">선택01</option>
-                                        <option value="opt2">선택02</option>
-                                        <option value="opt3">선택03</option>
-                                    </select>
+                                    <label class="ipt_radio">
+                                        <input type="radio" name="" id="" disabled="disabled">
+                                        <span>radio_option01</span>
+                                    </label>
                                 </li>
                             </ul>
                         </div>
