@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="resource/css/reset.css">
+    <link rel="stylesheet" href="resource/css/common.css">
+    <script src="resource/js/jquery-3.4.1.min.js"></script>
+    <script src="resource/js/main.js"></script>
+    <title>BUI</title>
+</head>
+
+<body>
+    <div class="wrap">
+        <aside>
+            <h1 class="logo"><a href="#">BUI</a></h1>
+            <ul class="nav_menu">
+                <li class="active">
+                    <a href="#">가이드</a>
+                    <ul>
+                        <li class="on"><a href="#">메뉴메뉴</a></li>
+                        <li><a href="#">메뉴메뉴</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#">컴포넌트</a>
+                    <ul>
+                        <li><a href="#">메뉴메뉴</a></li>
+                        <li><a href="#">메뉴메뉴</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#">TECH</a>
+                    <ul>
+                        <li><a href="#">메뉴메뉴</a></li>
+                        <li><a href="#">메뉴메뉴</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#">설정</a>
+                    <ul>
+                        <li><a href="#">메뉴메뉴</a></li>
+                        <li><a href="#">메뉴메뉴</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </aside>
+        <div class="container">
+            <header>
+                <button class="btn_menu"></button>
+                <p>접속IP : 218.237.65.1</p>
+                <div class="right">
+                    <span class="name">백종오 (S등급)님</span>
+                    <span>이 로그인하셨습니다 </span>
+                    <div class="grp_topmenu">
+                        <button class="btn_noti">알림</button>
+                        <button>공지사항</button>
+                        <button>로그아웃</button>
+                    </div>
+                </div>
+            </header>
+            <div class="tab_main">
+                <ul class="tab_main_list">
+                    <li><a href="#">타이틀</a><button class="close"></button></li>
+                    <li><a href="#">타이틀</a><button class="close"></button></li>
+                    <li><a href="#" class="on">백종오의힘</a><button class="close"></button></li>
+                </ul>
+                <div class="tit_main">
+                    <h2>백종오의힘</h2>
+                    <p>백종오의힘을 보여줘</p>
+                </div>
+                <div class="ly_content">
+                    <div class="content">
+                        <div class="grp_component">
+                            <p class="title">Input [text]</p>
+                            <ul>
+                                <li>
+                                    <p class="tit">Defult</p>
+                                    <input type="text">
+                                </li>
+                                <li>
+                                    <p class="tit">readonly</p>
+                                    <input type="text" readonly="readonly">
+                                </li>
+                                <li>
+                                    <p class="tit">disabled</p>
+                                    <input type="text" disabled="disabled">
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="grp_component">
+                            <p class="title">Input [Search]</p>
+                            <ul>
+                                <li>
+                                    <p class="tit">Defult</p>
+                                    <input type="search">
+                                </li>
+                                <li>
+                                    <p class="tit">readonly</p>
+                                    <input type="search" readonly="readonly">
+                                </li>
+                                <li>
+                                    <p class="tit">disabled</p>
+                                    <input type="search" disabled="disabled">
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="grp_component">
+                            <p class="title">Input [Password]</p>
+                            <ul>
+                                <li>
+                                    <p class="tit">Defult</p>
+                                    <input type="password">
+                                </li>
+                                <li>
+                                    <p class="tit">readonly</p>
+                                    <input type="password" readonly="readonly">
+                                </li>
+                                <li>
+                                    <p class="tit">disabled</p>
+                                    <input type="password" disabled="disabled">
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="grp_component">
+                            <p class="title">Select</p>
+                            <ul>
+                                <li>
+                                    <p class="tit">Defult</p>
+                                    <select name="" id="">
+                                        <option value="opt1">선택01</option>
+                                        <option value="opt2">선택02</option>
+                                        <option value="opt3">선택03</option>
+                                    </select>
+                                </li>
+                                <li>
+                                    <p class="tit">disabled</p>
+                                    <select name="" id="" disabled>
+                                        <option value="opt1">선택01</option>
+                                        <option value="opt2">선택02</option> 
+                                        <option value="opt3">선택03</option>
+                                    </select>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="grp_component">
+                            <p class="title">Checkbox</p>
+                            <ul>
+                                <li>
+                                    <p class="tit">Defult</p>
+                                    <label>
+                                        <input type="checkbox" name="" id="">
+                                        <span>check_option01</span>
+                                    </label>
+                                </li>
+                                <li>
+                                    <p class="tit">disabled</p>
+                                    <select name="" id="" disabled>
+                                        <option value="opt1">선택01</option>
+                                        <option value="opt2">선택02</option>
+                                        <option value="opt3">선택03</option>
+                                    </select>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="grp_component">
+                            <p class="title">Radiobox</p>
+                            <ul>
+                                <li>
+                                    <p class="tit">Defult</p>
+                                    <select name="" id="">
+                                        <option value="opt1">선택01</option>
+                                        <option value="opt2">선택02</option>
+                                        <option value="opt3">선택03</option>
+                                    </select>
+                                </li>
+                                <li>
+                                    <p class="tit">disabled</p>
+                                    <select name="" id="" disabled>
+                                        <option value="opt1">선택01</option>
+                                        <option value="opt2">선택02</option>
+                                        <option value="opt3">선택03</option>
+                                    </select>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="content set">
+                        <form id="inputForm" class="form_setting">
+                            <h3>Defult Settings</h3>
+                            <ul class="form_ul">
+                                <li>
+                                    <label for="inputHeight">height:</label>
+                                    <input type="text" id="inputHeight" name="input_height" value="40">
+                                </li>
+                                <li>
+                                    <label for="inputPadding">padding:</label>
+                                    <input type="text" id="inputPadding" name="input_pd" value="8">
+                                </li>
+                            </ul>
+                            <h3>Border Settings</h3>
+                            <ul class="form_ul">
+                                <li>
+                                    <label for="inputBorderWidth">border-width:</label>
+                                    <input type="text" id="inputBorderWidth" name="input_bd_width" value="1">
+                                </li>
+                                <li>
+                                    <label for="inputBorderRadius">border-radius:</label>
+                                    <input type="text" id="inputBorderRadius" name="input_bd_radius" value="4">
+                                </li>
+                                <li>
+                                    <label for="inputBorderColor">border-color:</label>
+                                    <input type="color" id="inputBorderColor" name="input_bd_color" value="#aaaaaa">
+                                </li>
+                                <li>
+                                    <label for="inputBorderStyle">border-style:</label>
+                                    <select name="" id="inputBorderStyle">
+                                        <option value="solid">solid</option>
+                                        <option value="dashed">dashed</option>
+                                        <option value="dotted">dotted</option>
+                                        <option value="double">double</option>
+                                        <option value="groove">groove</option>
+                                        <option value="ridge">ridge</option>
+                                        <option value="inset">inset</option>
+                                        <option value="outset">outset</option>
+                                    </select>
+                                </li>
+                            </ul>
+                            <h3>Font Settings</h3>
+                            <ul class="form_ul">
+                                <li>
+                                    <label for="inputFontSize">font-size:</label>
+                                    <input type="text" id="inputFontSize" name="input_font_size" value="16">
+                                </li>
+                                <li>
+                                    <label for="inputFontWeight">font-weight:</label>
+                                    <input type="text" id="inputFontWeight" name="input_font_weight" value="400">
+                                </li>
+                                <li>
+                                    <label for="inputFontColor">font-color:</label>
+                                    <input type="color" id="inputFontColor" name="" value="#333333">
+                                </li>
+                                <li>
+                                    <label for="inputLineHeight">line-height:</label>
+                                    <input type="text" id="inputLineHeight" name="" value="inherit">
+                                </li>
+                            </ul>
+                            <button type="button" onclick="applyStyles()" class="btn_apply">Apply</button>
+                        </form>
+                        <script>
+                            function applyStyles() {
+                                const inputHeight = document.getElementById('inputHeight').value + 'px';
+                                const inputPadding = document.getElementById('inputPadding').value + 'px';
+                                const inputBorderWidth = document.getElementById('inputBorderWidth').value + 'px';
+                                const inputBorderRadius = document.getElementById('inputBorderRadius').value + 'px';
+                                const inputBorderColor = document.getElementById('inputBorderColor').value;
+                                const inputBorderStyle = document.getElementById('inputBorderStyle').value;
+                                const inputFontSize = document.getElementById('inputFontSize').value + 'px';
+                                const inputFontWeight = document.getElementById('inputFontWeight').value;
+                                const inputFontColor = document.getElementById('inputFontColor').value;
+                                const inputLineHeight = document.getElementById('inputLineHeight').value;
+
+                                document.documentElement.style.setProperty('--input-height', inputHeight);
+                                document.documentElement.style.setProperty('--input-pd', inputPadding);
+                                document.documentElement.style.setProperty('--input-bd-width', inputBorderWidth);
+                                document.documentElement.style.setProperty('--input-bd-radius', inputBorderRadius);
+                                document.documentElement.style.setProperty('--input-bd-color', inputBorderColor);
+                                document.documentElement.style.setProperty('--input-bd-type', inputBorderStyle);
+                                document.documentElement.style.setProperty('--input-font-size', inputFontSize);
+                                document.documentElement.style.setProperty('--input-font-weight', inputFontWeight);
+                                document.documentElement.style.setProperty('--input-font-color', inputFontColor);
+                                document.documentElement.style.setProperty('--input-lineheight', inputLineHeight);
+                            }
+                        </script>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
