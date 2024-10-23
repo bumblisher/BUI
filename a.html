@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="resource/css/reset.css">
+    <link rel="stylesheet" href="resource/css/common.css">
+    <script src="resource/js/jquery-3.4.1.min.js"></script>
+    <script src="resource/js/main.js"></script>
+    <title>BUI</title>
+</head>
+
+<body>
+    <div class="wrap">
+        <header>
+            <h1 class="logo"><a href="index.html">BUI</a></h1>
+            <nav>
+                <ul>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">StyleGuide</a></li>
+                    <li><a href="#">Component</a></li>
+                    <li><a href="#">Module</a></li>
+                    <li><a href="https://www.youtube.com/watch?v=SY5X2p0Nbgk">프레이머</a></li>
+                </ul>
+            </nav>
+        </header>
+        <div class="container">
+            <aside>
+                <ul class="nav_menu">
+                    <li class="active">
+                        <a href="#">즐겨찾기</a>
+                        <ul>
+                            <li class="on"><a href="#">input</a></li>
+                            <li><a href="#">checkbox</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#">컴포넌트</a>
+                        <ul>
+                            <li><a href="#">메뉴메뉴</a></li>
+                            <li><a href="#">메뉴메뉴</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#">TECH</a>
+                        <ul>
+                            <li><a href="#">메뉴메뉴</a></li>
+                            <li><a href="#">메뉴메뉴</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#">설정</a>
+                        <ul>
+                            <li><a href="#">메뉴메뉴</a></li>
+                            <li><a href="#">메뉴메뉴</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </aside>
+            <div class="content">
+                <div class="box">
+                    <div class="grp_component">
+                        <p class="title">Input [text]</p>
+                        <ul>
+                            <li>
+                                <p class="tit">Defult</p>
+                                <input type="text" class="ipt_text">
+                            </li>
+                            <li>
+                                <p class="tit">readonly</p>
+                                <input type="text" class="ipt_text" readonly="readonly">
+                            </li>
+                            <li>
+                                <p class="tit">disabled</p>
+                                <input type="text" class="ipt_text" disabled="disabled">
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="grp_component">
+                        <p class="title">Input [Search]</p>
+                        <ul>
+                            <li>
+                                <p class="tit">Defult</p>
+                                <input type="search" class="ipt_search">
+                            </li>
+                            <li>
+                                <p class="tit">readonly</p>
+                                <input type="search" class="ipt_search" readonly="readonly">
+                            </li>
+                            <li>
+                                <p class="tit">disabled</p>
+                                <input type="search" class="ipt_search" disabled="disabled">
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="grp_component">
+                        <p class="title">Input [Password]</p>
+                        <ul>
+                            <li>
+                                <p class="tit">Defult</p>
+                                <input type="password" class="ipt_password">
+                            </li>
+                            <li>
+                                <p class="tit">readonly</p>
+                                <input type="password" class="ipt_password" readonly="readonly">
+                            </li>
+                            <li>
+                                <p class="tit">disabled</p>
+                                <input type="password" class="ipt_password" disabled="disabled">
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="grp_component">
+                        <p class="title">Select</p>
+                        <ul>
+                            <li>
+                                <p class="tit">Defult</p>
+                                <select name="" id="" class="select">
+                                    <option value="opt1">선택01</option>
+                                    <option value="opt2">선택02</option>
+                                    <option value="opt3">선택03</option>
+                                </select>
+                            </li>
+                            <li>
+                                <p class="tit">disabled</p>
+                                <select name="" id="" class="select" disabled="disabled">
+                                    <option value="opt1">선택01</option>
+                                    <option value="opt2">선택02</option>
+                                    <option value="opt3">선택03</option>
+                                </select>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="grp_component">
+                        <p class="title">Checkbox</p>
+                        <ul>
+                            <li>
+                                <p class="tit">Defult</p>
+                                <label class="ipt_check">
+                                    <input type="checkbox" name="" id="">
+                                    <span>check_option01</span>
+                                </label>
+                            </li>
+                            <li>
+                                <p class="tit">List</p>
+                                <ul class="list_check">
+                                    <li>
+                                        <label class="ipt_check">
+                                            <input type="checkbox" name="list_checkbox" id="">
+                                            <span>check_option01</span>
+                                        </label>
+                                    </li>
+                                    <li>
+                                        <label class="ipt_check">
+                                            <input type="checkbox" name="list_checkbox" id="">
+                                            <span>check_option02</span>
+                                        </label>
+                                    </li>
+                                    <li>
+                                        <label class="ipt_check">
+                                            <input type="checkbox" name="list_checkbox" id="">
+                                            <span>check_option03</span>
+                                        </label>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li>
+                                <p class="tit">disabled</p>
+                                <label class="ipt_check">
+                                    <input type="checkbox" name="" id="" disabled="disabled">
+                                    <span>check_option01</span>
+                                </label>
+                            </li>
+                        </ul>
+                        <ul>
+                            <li>
+                                <p class="tit">Defult</p>
+                                <label class="ipt_check">
+                                    <span class="ico">
+                                        <input type="checkbox" name="list_checkbox" id="">
+                                        <svg xmlns="http://www.w3.org/2000/svg" fill="none"
+                                            viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"
+                                            class="size-6">
+                                            <path stroke-linecap="round" stroke-linejoin="round"
+                                                d="m4.5 12.75 6 6 9-13.5" />
+                                        </svg>
+                                    </span>
+                                    <span>check_option01</span>
+                                </label>
+                            </li>
+                            <li>
+                                <p class="tit">List</p>
+                                <ul class="list_check">
+                                    <li>
+                                        <label class="ipt_check">
+                                            <span class="ico">
+                                                <input type="checkbox" name="list_checkbox" id="">
+                                                <svg xmlns="http://www.w3.org/2000/svg" fill="none"
+                                                    viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"
+                                                    class="size-6">
+                                                    <path stroke-linecap="round" stroke-linejoin="round"
+                                                        d="m4.5 12.75 6 6 9-13.5" />
+                                                </svg>
+                                            </span>
+                                            <span>check_option01</span>
+                                        </label>
+                                    </li>
+                                    <li>
+                                        <label class="ipt_check">
+                                            <span class="ico">
+                                                <input type="checkbox" name="list_checkbox" id="">
+                                                <svg xmlns="http://www.w3.org/2000/svg" fill="none"
+                                                    viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"
+                                                    class="size-6">
+                                                    <path stroke-linecap="round" stroke-linejoin="round"
+                                                        d="m4.5 12.75 6 6 9-13.5" />
+                                                </svg>
+                                            </span>
+                                            <span>check_option02</span>
+                                        </label>
+                                    </li>
+                                    <li>
+                                        <label class="ipt_check">
+                                            <span class="ico">
+                                                <input type="checkbox" name="list_checkbox" id="">
+                                                <svg xmlns="http://www.w3.org/2000/svg" fill="none"
+                                                    viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"
+                                                    class="size-6">
+                                                    <path stroke-linecap="round" stroke-linejoin="round"
+                                                        d="m4.5 12.75 6 6 9-13.5" />
+                                                </svg>
+                                            </span>
+                                            <span>check_option03</span>
+                                        </label>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li>
+                                <p class="tit">disabled</p>
+                                <label class="ipt_check">
+                                    <input type="checkbox" name="" id="" disabled="disabled">
+                                    <span>check_option01</span>
+                                </label>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="grp_component">
+                        <p class="title">Radio</p>
+                        <ul>
+                            <li>
+                                <p class="tit">Defult</p>
+                                <label class="ipt_radio">
+                                    <input type="radio" name="" id="">
+                                    <span>radio_option01</span>
+                                </label>
+                            </li>
+                            <li>
+                                <p class="tit">List</p>
+                                <ul class="list_radio">
+                                    <li>
+                                        <label class="ipt_radio">
+                                            <input type="radio" name="list_radio" id="">
+                                            <span>radio_option01</span>
+                                        </label>
+                                    </li>
+                                    <li>
+                                        <label class="ipt_radio">
+                                            <input type="radio" name="list_radio" id="">
+                                            <span>radio_option02</span>
+                                        </label>
+                                    </li>
+                                    <li>
+                                        <label class="ipt_radio">
+                                            <input type="radio" name="list_radio" id="">
+                                            <span>radio_option03</span>
+                                        </label>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li>
+                                <p class="tit">disabled</p>
+                                <label class="ipt_radio">
+                                    <input type="radio" name="" id="" disabled="disabled">
+                                    <span>radio_option01</span>
+                                </label>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="grp_component">
+                        <p class="title">Anchor</p>
+                        <ul>
+                            <li>
+                                <p class="tit">Defult</p>
+                                <a href="#" class="ank">Anchor</a>
+                            </li>
+                            <li>
+                                <p class="tit">ButtonType</p>
+                                <a href="#" class="btn">Anchor</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="grp_component">
+                        <p class="title">Button</p>
+                        <ul>
+                            <li>
+                                <p class="tit">Defult</p>
+                                <button class="btn">Button</button>
+                            </li>
+                            <li>
+                                <p class="tit">disabled</p>
+                                <button class="btn" disabled="disabled">Button</button>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
