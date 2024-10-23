@@ -59,6 +59,7 @@ header nav ul li a:hover::before{background-color: #ece2ff;border-radius: 50%;}
 .list_value{display: inline-flex;align-items: center;flex-wrap: wrap;gap:8px}
 .list_value li{background: #eee;padding:4px 8px;border-radius: 4px;}
 .list_value li.dis{opacity: 0.4;}
+.list_value li.defult{background: var(--checked-bg);color:#fff}
 
 /* 사이드 메뉴 */
 aside { flex:none; height: 100%; width: 210px;background: #252832; overflow:hidden; overflow-y: auto; transition: all 0.4s;} 
@@ -121,6 +122,33 @@ aside .nav_menu ul ul li> a:hover { color: #4B4B4B;background-color:#e9e9e9}
     & .select{width:100%;height: var(--input-height);padding:var(--input-pd);border: var(--input-bd-width) var(--input-bd-type) var(--input-bd-color);border-radius: var(--input-bd-radius);font-size:var(--input-font-size);font-weight: var(--input-font-weight);color:var(--input-font-color);line-height: var(--input-lineheight);box-sizing: border-box;}
 }
 
+/* ipt_text */
+
+.grp_component {
+    & .ipt_text::placeholder{color:#bbb}
+    & .ipt_text:read-only{background-color: #f0f0f0;color:#aaa}
+    & .ipt_text:disabled{background-color: #e9e9e9;color:#bbb}
+
+    & .bm_ipt_text.ani01{transition: 0.3s all;border-radius: 4px;}
+    & .bm_ipt_text.ani01:hover{box-shadow: 0px 3px 10px rgba(0,0,0,0.15);}
+    & .bm_ipt_text.ani01:has(.ipt_text:focus){box-shadow: 0px 4px 15px rgba(0,0,0,0.25);scale:1.01;}
+    & .bm_ipt_text.ani01 .ipt_text:focus{outline: none;}
+
+    & .bm_ipt_text.ani02 {position: relative;overflow: hidden;}
+    & .bm_ipt_text.ani02 .ipt_text{transition: 0.3s all;}
+    & .bm_ipt_text.ani02::before{content:'';position: absolute;left:0px;bottom: 0px;width: 0%;height: 4px;border-bottom: 2px solid #a579ff;transition: 0.3s all;border-radius: 0 0 4px 4px;}
+    & .bm_ipt_text.ani02:hover::before {width: calc(100% - 0px);}
+    & .bm_ipt_text.ani02 .ipt_text:focus{outline: none;box-shadow: inset 0 0 0 1px #a579ff;}
+
+    & .bm_ipt_text.ani03 {position: relative;overflow: hidden;background: #fff;border-radius: 4px;}
+    & .bm_ipt_text.ani03 .ipt_text{position: relative;;background: transparent;transition: 0.3s all;z-index: 1;}
+    & .bm_ipt_text.ani03::before{content:'';position: absolute;left:0;top: 0;width: 0%;height: 100%;background: #f5f2fb;transition: 0.3s all;z-index: 0;}
+    & .bm_ipt_text.ani03:hover::before {width: 100%}
+    & .bm_ipt_text.ani03::after{content:'';position: absolute;left:0;top: 0;width: 0%;height: 100%;background: #efe9fa;transition: 0.3s all;z-index: 0;}
+    & .bm_ipt_text.ani03:has(.ipt_text:focus)::after {width: 100%}
+    & .bm_ipt_text.ani03 .ipt_text:focus{outline: none;box-shadow: inset 0 0 0 1px #a579ff;}
+
+}
 
 .grp_component .ipt_check{display: flex;align-items:center;gap:4px}
 .grp_component .ipt_check input[type=checkbox]{width:16px;height: 16px;}
@@ -131,7 +159,9 @@ aside .nav_menu ul ul li> a:hover { color: #4B4B4B;background-color:#e9e9e9}
 
 .grp_component + .grp_component{margin-top: 28px;}
 .grp_component .title{font-size: 20px;font-weight: 700;margin-bottom: 12px;}
-.grp_component > ul{display: grid;grid-template-columns: repeat(3, 1fr);gap:20px;border:1px solid #eee;padding:16px}
-.grp_component > ul li .tit{margin-bottom: 4px;}
+.grp_component .comp {border:1px solid #ddd;padding:16px}
+.grp_component .comp + .comp{margin-top: 12px;}
+.grp_component .comp > ul{display: grid;grid-template-columns: repeat(4, 1fr);gap:20px;}
+.grp_component .comp > ul li .tit{margin-bottom: 4px;}
 
 .btn_apply{padding: 0 8px;height:30px;}
