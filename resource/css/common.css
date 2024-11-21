@@ -20,6 +20,7 @@
     /*  */
 }
 
+
 /* 레이아웃 */
 .wrap {display: flex;flex-direction: column;height: 100%;} 
 .wrap:after { content: ''; display: block; clear: both; } 
@@ -94,7 +95,6 @@ aside .nav_menu ul ul li> a:hover { color: #4B4B4B;background-color:#e9e9e9}
 .list_value li{background: #eee;padding:4px 8px;border-radius: 4px;}
 .list_value li.dis{opacity: 0.4;}
 .list_value li.defult{background: var(--checked-bg);color:#fff}
-
 
 
 .ly_content{display: flex;gap:10px}
@@ -200,7 +200,7 @@ aside .nav_menu ul ul li> a:hover { color: #4B4B4B;background-color:#e9e9e9}
     
     /* design */
     input[type=checkbox]{width:16px;height: 16px;}
-    .ico{position: relative;display: inline-block;width: 16px;height: 16px;border:1px solid #ccc}
+    .ico{position: relative;display: inline-block;width: 16px;height: 16px;border:1px solid #ccc;box-sizing: border-box;}
     .ico input{position: absolute;left: 0;top:0;width: 100%;height: 100%;opacity: 0;}
     .ico:has(input:focus-visible){outline: 2px solid #000;}
     .ico svg{vertical-align: top;}
@@ -219,16 +219,147 @@ aside .nav_menu ul ul li> a:hover { color: #4B4B4B;background-color:#e9e9e9}
 
     /* ani */
     &.ani01 .ico svg{transition: stroke-dashoffset 0.3s ease;  stroke-dasharray: 16;stroke-dashoffset: 16;}
-    .ico input:checked + svg{stroke-dashoffset: 0;animation: check_ani01 0.3s ease forwards;}
-    @keyframes check_ani01 {
-        0% {stroke-dashoffset: 16;}
-        100% {stroke-dashoffset: 0;}
-    }
+    &.ani01 .ico input:checked + svg{stroke-dashoffset: 0;animation: check_ani01 0.3s ease forwards;}
+}
+@keyframes check_ani01 {
+    0% {stroke-dashoffset: 16;}
+    100% {stroke-dashoffset: 0;}
+}
+
+.list_check{
+    &{display: flex;gap: 8px 16px;flex-wrap: wrap;}
+
+    [data-chk-col]{display: grid;}
+    [data-chk-col=1]{grid-template-columns: repeat(1fr);}
+    [data-chk-col=2]{grid-template-columns: repeat(2, 1fr);}
+}
+
+
+/*** radio ***/
+.ipt_radio{
+    &{display: inline-flex;align-items:center;gap:4px;}
+    
+    /** design **/
+    /* design - defult */
+    input[type=radio]{width:16px;height: 16px;}
+    .ico{position: relative;display: inline-block;width: 16px;height: 16px;border:1px solid #ccc;border-radius: 50%;box-sizing: border-box;}
+    .ico input{position: absolute;left: 0;top:0;width: 100%;height: 100%;opacity: 0;}
+    .ico:has(input:focus-visible){outline: 2px solid #000;}
+    .ico svg{vertical-align: top;}
+    .ico input:checked + svg circle{display: block;fill:var(--checked-bg)}
+    .ico:has(input:disabled){background: #ddd;}
+    .ico:has(input:disabled) svg circle{fill: #ddd;}
+    .ico:has(input:disabled) + span{color:#aaa}
+    .ico:has(input:disabled) input:checked + svg circle{fill:#fff}
+
+    /* design - fill */
+    &.fill .ico:has(input:checked){background: var(--checked-bg);border-color:var(--checked-bg)}
+    &.fill .ico input:checked + svg circle{fill:#fff}
+    
+    /* design - btn */
+    &.btn {border:1px solid #ccc;padding:4px 8px;border-radius: 4px;}
+    &.btn:has(input:checked){border-color:var(--checked-bg);background: var(--checked-bg);color: #fff;}
+    &.btn .ico:has(input:checked) {border-color: #fff;}
+    &.btn .ico input:checked + svg circle{fill:#fff}
+
+    /* ani */
+    &.ani01 .ico svg{transition: stroke-dashoffset 0.3s ease;  stroke-dasharray: 16;stroke-dashoffset: 16;}
+    &.ani01 .ico input:checked + svg{stroke-dashoffset: 0;animation: check_ani01 0.3s ease forwards;}
 
 }
 
-.list_check{display: flex;gap: 8px 16px;flex-wrap: wrap;}
+.list_radio{
+    &{display: flex;gap: 8px 16px;flex-wrap: wrap;}
 
-.list_check[data-chk-col]{display: grid;}
-.list_check[data-chk-col=1]{grid-template-columns: repeat(1fr);}
-.list_check[data-chk-col=2]{grid-template-columns: repeat(2, 1fr);}
+    [data-chk-col]{display: grid;}
+    [data-chk-col=1]{grid-template-columns: repeat(1fr);}
+    [data-chk-col=2]{grid-template-columns: repeat(2, 1fr);}
+}
+
+
+/*** slider ***/
+.range-slider {
+    &{position: relative;width: 200px;height: 35px;margin: 50px auto;}
+
+    input[type="range"] {-webkit-appearance: none;width: 100%;background: transparent;position: absolute;left: 0;}
+    input[type="range"]::-webkit-slider-thumb {-webkit-appearance: none;height: 15px;width: 15px;border-radius: 50%;background:  var(--checked-bg);cursor: pointer;margin-top: -5px;position: relative;z-index: 1;}
+    input[type="range"]::-webkit-slider-runnable-track {width: 100%;height: 5px;background: #e1e1e1;border-radius: 3px;border: none;}
+    .slider-track {width: 100%;height: 5px;position: absolute;top: 0;bottom: 0;border-radius: 5px;background: #e1e1e1;}
+    .slider-range {position: absolute;height: 5px;background: var(--checked-bg);border-radius: 5px;}
+    .slider-values {padding-top: 20px;text-align: center;}
+}
+
+
+/*** color ***/
+.color-picker {display: flex;align-items: center;gap: 10px;}
+#colorInput {width: 32px;height: 32px;padding: 0;border: none;cursor: pointer;background: #fff;}
+#hexInput {width: 80px;padding: 5px;border: 1px solid #ccc;}
+
+
+
+
+.file-upload-container {
+    max-width: 400px;
+    margin: 20px auto;
+    padding: 20px;
+    border: 2px dashed #ccc;
+    border-radius: 8px;
+    text-align: center;
+  }
+
+  .file-upload-label {
+    display: block;
+    cursor: pointer;
+    padding: 10px;
+    background-color: #f0f0f0;
+    border-radius: 4px;
+    transition: background-color 0.3s;
+  }
+
+  .file-upload-label:hover {
+    background-color: #e0e0e0;
+  }
+
+  .upload-icon {
+    display: block;
+    margin: 0 auto 10px;
+    fill: #666;
+  }
+
+  .file-upload-input {
+    display: none;
+  }
+
+  .file-list {
+    margin-top: 20px;
+    text-align: left;
+  }
+
+  .file-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 5px;
+    padding: 5px;
+    background-color: #f9f9f9;
+    border-radius: 4px;
+  }
+
+  .delete-btn {
+    background-color: #ff4d4d;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 3px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+
+  .delete-btn:hover {
+    background-color: #ff3333;
+  }
+
+  .upload-status {
+    margin-top: 10px;
+    font-weight: bold;
+  }

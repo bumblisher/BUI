@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="resource/css/reset.css">
+    <link rel="stylesheet" href="resource/css/common.css">
+    <script src="resource/js/jquery-3.4.1.min.js"></script>
+    <script src="resource/js/main.js"></script>
+    <title>BUI</title>
+</head>
+
+<body>
+    <div class="wrap">
+        <header>
+            <h1 class="logo"><a href="index.html">BUI</a></h1>
+            <nav>
+                <ul>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">StyleGuide</a></li>
+                    <li><a href="#">Component</a></li>
+                    <li><a href="#">Module</a></li>
+                    <li><a href="https://www.youtube.com/watch?v=SY5X2p0Nbgk">프레이머</a></li>
+                </ul>
+            </nav>
+        </header>
+        <div class="container">
+            <aside>
+                <ul class="nav_menu">
+                    <li>
+                        <a href="#">즐겨찾기</a>
+                        <ul>
+                            <li><a href="input_textfield.html">input</a></li>
+                            <li><a href="#">checkbox</a></li>
+                        </ul>
+                    </li>
+                    <li class="active">
+                        <a href="#">컴포넌트</a>
+                        <ul>
+                            <li><a href="input_textfield.html">Input [TextField]</a></li>
+                            <li><a href="input_check.html">Input [Check]</a></li>
+                            <li><a href="input_radio.html">Input [Radio]</a></li>
+                            <li><a href="input_rage.html">Input [Range]</a></li>
+                            <li><a href="input_color.html">Input [Color]</a></li>
+                            <li class="on"><a href="input_file.html">Input [File]</a></li>
+                            <li><a href="input_calendar.html">Input [Calendar]</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#">TECH</a>
+                        <ul>
+                            <li><a href="#">메뉴메뉴</a></li>
+                            <li><a href="#">메뉴메뉴</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#">설정</a>
+                        <ul>
+                            <li><a href="#">메뉴메뉴</a></li>
+                            <li><a href="#">메뉴메뉴</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </aside>
+            <div class="content">
+                <section>
+                    <h3>Input [File]</h3>
+                    <p>Input 요소로서 어쩌고 저쩌고 입니다.</p>
+                    <div class="grp_component">
+                        <p class="title">Type</p>
+                        <div class="comp">
+                            <p class="title">Native</p>
+                            <ul>
+                                <li>
+                                    <p class="tit">defult</p>
+                                    <input id="" type="file" class="input_file">
+                                </li>
+                                <li>
+                                    <p class="tit">disabled</p>
+                                    <input id="" type="file" class="input_file" disabled>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="comp">
+                            <p class="title">Component</p>
+                            <ul>
+                                <li>
+                                    <p class="tit">defult</p>
+                                    <div class="file-upload-container">
+                                        <label for="file-upload" class="file-upload-label">
+                                            <svg class="upload-icon" xmlns="http://www.w3.org/2000/svg" width="24"
+                                                height="24" viewBox="0 0 24 24">
+                                                <path
+                                                    d="M19.35 10.04C18.67 6.59 15.64 4 12 4 9.11 4 6.6 5.64 5.35 8.04 2.34 8.36 0 10.91 0 14c0 3.31 2.69 6 6 6h13c2.76 0 5-2.24 5-5 0-2.64-2.05-4.78-4.65-4.96zM14 13v4h-4v-4H7l5-5 5 5h-3z" />
+                                            </svg>
+                                            <span>파일 선택 또는 드래그 앤 드롭</span>
+                                        </label>
+                                        <input id="file-upload" type="file" class="file-upload-input" multiple
+                                            accept=".jpg,.jpeg,.png,.pdf">
+                                        <div id="file-list" class="file-list"></div>
+                                        <div id="upload-status" class="upload-status"></div>
+                                    </div>
+
+                                    <script>
+                                        const fileUpload = document.getElementById('file-upload');
+                                        const fileList = document.getElementById('file-list');
+                                        const uploadStatus = document.getElementById('upload-status');
+                                        let selectedFiles = [];
+
+                                        fileUpload.addEventListener('change', handleFileSelect);
+
+                                        function handleFileSelect(event) {
+                                            const newFiles = Array.from(event.target.files);
+                                            selectedFiles = [...selectedFiles, ...newFiles];
+                                            updateFileList();
+                                        }
+
+                                        function updateFileList() {
+                                            fileList.innerHTML = '';
+                                            uploadStatus.textContent = '';
+
+                                            selectedFiles.forEach((file, index) => {
+                                                const fileItem = document.createElement('div');
+                                                fileItem.className = 'file-item';
+                                                fileItem.innerHTML = `<span>${file.name} (${formatFileSize(file.size)})</span>
+                                                <button class="delete-btn" data-index="${index}">삭제</button>`;
+                                                fileList.appendChild(fileItem);
+                                            });
+
+                                            uploadStatus.textContent = `${selectedFiles.length}개의 파일이 선택되었습니다.`;
+
+                                            // 삭제 버튼에 이벤트 리스너 추가
+                                            document.querySelectorAll('.delete-btn').forEach(btn => {
+                                                btn.addEventListener('click', deleteFile);
+                                            });
+                                        }
+
+                                        function deleteFile(event) {
+                                            const index = parseInt(event.target.getAttribute('data-index'));
+                                            selectedFiles.splice(index, 1);
+                                            updateFileList();
+                                        }
+
+                                        function formatFileSize(bytes) {
+                                            if (bytes === 0) return '0 Bytes';
+                                            const k = 1024;
+                                            const sizes = ['Bytes', 'KB', 'MB', 'GB', 'TB'];
+                                            const i = Math.floor(Math.log(bytes) / Math.log(k));
+                                            return parseFloat((bytes / Math.pow(k, i)).toFixed(2)) + ' ' + sizes[i];
+                                        }
+
+                                        // 드래그 앤 드롭 기능
+                                        const dropZone = document.querySelector('.file-upload-container');
+
+                                        dropZone.addEventListener('dragover', (e) => {
+                                            e.preventDefault();
+                                            dropZone.style.borderColor = '#007bff';
+                                        });
+
+                                        dropZone.addEventListener('dragleave', () => {
+                                            dropZone.style.borderColor = '#ccc';
+                                        });
+
+                                        dropZone.addEventListener('drop', (e) => {
+                                            e.preventDefault();
+                                            dropZone.style.borderColor = '#ccc';
+                                            const newFiles = Array.from(e.dataTransfer.files);
+                                            selectedFiles = [...selectedFiles, ...newFiles];
+                                            updateFileList();
+                                        });
+                                    </script>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </section>
+                <section class="box_tbl">
+                    <h3>Attribute 속성</h3>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th></th>
+                                <th>Attribute(속성)</th>
+                                <th>Value(값)</th>
+                                <th>Description(설명)</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td></td>
+                                <td>
+                                    <p>type</p>
+                                </td>
+                                <td>
+                                    <ul class="list_value">
+                                        <li class="defult">text</li>
+                                        <li>password</li>
+                                        <li>search</li>
+                                        <li>number</li>
+                                        <li class="dis">hidden</li>
+                                        <li class="dis">email</li>
+                                        <li class="dis">tel</li>
+                                        <li class="dis">url</li>
+                                    </ul>
+                                </td>
+                                <td>
+                                    <p>인풋을 여러가지 타입으로 사용할수 있습니다.</p>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td></td>
+                                <td>
+                                    <p>placeholder</p>
+                                </td>
+                                <td></td>
+                                <td>
+                                    <p>placeholder 텍스트를 입력합니다.</p>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td></td>
+                                <td>
+                                    <p>id</p>
+                                </td>
+                                <td></td>
+                                <td>
+                                    <p>id값을 지정합니다.</p>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td></td>
+                                <td>
+                                    <p>class</p>
+                                </td>
+                                <td></td>
+                                <td>
+                                    <p>class값을 지정합니다.</p>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td></td>
+                                <td>
+                                    <p>readonly</p>
+                                </td>
+                                <td>
+                                    <ul class="list_value">
+                                        <li>true</li>
+                                        <li>false</li>
+                                    </ul>
+                                </td>
+                                <td>
+                                    <p>readonly를 설정합니다.</p>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td></td>
+                                <td>
+                                    <p>disabled</p>
+                                </td>
+                                <td>
+                                    <ul class="list_value">
+                                        <li>true</li>
+                                        <li>false</li>
+                                    </ul>
+                                </td>
+                                <td>
+                                    <p>disabled를 설정합니다.</p>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td></td>
+                                <td>
+                                    <p>title</p>
+                                </td>
+                                <td></td>
+                                <td>
+                                    <p>title값을 지정합니다.</p>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <p class="badge plugin"></p>
+                                </td>
+                                <td>
+                                    <p>mask</p>
+                                </td>
+                                <td>
+                                    <ul class="list_value">
+                                        <li>number (#,###)</li>
+                                        <li>dash (##-##)</li>
+                                        <li>underbar (##_##)</li>
+                                        <li>text (##월 ##일)</li>
+                                    </ul>
+                                </td>
+                                <td>
+                                    <p>mask를 설정합니다.</p>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <p class="badge plugin"></p>
+                                </td>
+                                <td>
+                                    <p>maskFormat</p>
+                                </td>
+                                <td>####-##-##</td>
+                                <td>
+                                    <p>maskFormat값을 지정합니다.</p>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <p class="badge plugin"></p>
+                                </td>
+                                <td>
+                                    <p>animation</p>
+                                </td>
+                                <td>
+                                    <ul class="list_value">
+                                        <li>ani01</li>
+                                        <li>ani02</li>
+                                        <li>ani03</li>
+                                    </ul>
+                                </td>
+                                <td>
+                                    <p>animation 효과를 지정합니다.</p>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <p class="badge plugin"></p>
+                                </td>
+                                <td>
+                                    <p>design</p>
+                                </td>
+                                <td>
+                                    <ul class="list_value">
+                                        <li class="defult">defult</li>
+                                        <li>underline</li>
+                                        <li class="dis">type03</li>
+                                    </ul>
+                                </td>
+                                <td>
+                                    <p>제공하는 디자인중 선택합니다.</p>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <p class="badge plugin"></p>
+                                </td>
+                                <td>
+                                    <p>rendertype</p>
+                                </td>
+                                <td>
+                                    <ul class="list_value">
+                                        <li class="defult">component</li>
+                                        <li>native</li>
+                                    </ul>
+                                </td>
+                                <td>
+                                    <p>랜더링 되는 방법을 선택합니다.</p>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <p class="badge acc"></p>
+                                </td>
+                                <td>
+                                    <p>tabindex</p>
+                                </td>
+                                <td>
+                                </td>
+                                <td>
+                                    <p>탭 이동용 tabindex를 설정 합니다.</p>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <p class="badge acc"></p>
+                                </td>
+                                <td>
+                                    <p>role</p>
+                                </td>
+                                <td>
+                                </td>
+                                <td>
+                                    <p>접근성용 role을 설정합니다.</p>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </section>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
