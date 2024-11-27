@@ -74,11 +74,15 @@
                             <ul>
                                 <li>
                                     <p class="tit">defult</p>
-                                    <input id="" type="file" class="input_file">
+                                    <input type="file" class="input_file">
+                                </li>
+                                <li>
+                                    <p class="tit">multiple</p>
+                                    <input type="file" class="input_file" multiple>
                                 </li>
                                 <li>
                                     <p class="tit">disabled</p>
-                                    <input id="" type="file" class="input_file" disabled>
+                                    <input type="file" class="input_file" disabled>
                                 </li>
                             </ul>
                         </div>
@@ -88,7 +92,7 @@
                                 <li>
                                     <p class="tit">defult</p>
                                     <div class="file-upload-container">
-                                        <label for="file-upload" class="file-upload-label">
+                                        <label for="file-upload1-1" class="file-upload-label">
                                             <svg class="upload-icon" xmlns="http://www.w3.org/2000/svg" width="24"
                                                 height="24" viewBox="0 0 24 24">
                                                 <path
@@ -96,85 +100,218 @@
                                             </svg>
                                             <span>파일 선택 또는 드래그 앤 드롭</span>
                                         </label>
-                                        <input id="file-upload" type="file" class="file-upload-input" multiple
+                                        <input id="file-upload1-1" type="file" class="file-upload-input" multiple
                                             accept=".jpg,.jpeg,.png,.pdf">
-                                        <div id="file-list" class="file-list"></div>
-                                        <div id="upload-status" class="upload-status"></div>
+                                        <div class="file-list"></div>
+                                        <div class="upload-status"></div>
                                     </div>
-
-                                    <script>
-                                        const fileUpload = document.getElementById('file-upload');
-                                        const fileList = document.getElementById('file-list');
-                                        const uploadStatus = document.getElementById('upload-status');
-                                        let selectedFiles = [];
-
-                                        fileUpload.addEventListener('change', handleFileSelect);
-
-                                        function handleFileSelect(event) {
-                                            const newFiles = Array.from(event.target.files);
-                                            selectedFiles = [...selectedFiles, ...newFiles];
-                                            updateFileList();
-                                        }
-
-                                        function updateFileList() {
-                                            fileList.innerHTML = '';
-                                            uploadStatus.textContent = '';
-
-                                            selectedFiles.forEach((file, index) => {
-                                                const fileItem = document.createElement('div');
-                                                fileItem.className = 'file-item';
-                                                fileItem.innerHTML = `<span>${file.name} (${formatFileSize(file.size)})</span>
-                                                <button class="delete-btn" data-index="${index}">삭제</button>`;
-                                                fileList.appendChild(fileItem);
-                                            });
-
-                                            uploadStatus.textContent = `${selectedFiles.length}개의 파일이 선택되었습니다.`;
-
-                                            // 삭제 버튼에 이벤트 리스너 추가
-                                            document.querySelectorAll('.delete-btn').forEach(btn => {
-                                                btn.addEventListener('click', deleteFile);
-                                            });
-                                        }
-
-                                        function deleteFile(event) {
-                                            const index = parseInt(event.target.getAttribute('data-index'));
-                                            selectedFiles.splice(index, 1);
-                                            updateFileList();
-                                        }
-
-                                        function formatFileSize(bytes) {
-                                            if (bytes === 0) return '0 Bytes';
-                                            const k = 1024;
-                                            const sizes = ['Bytes', 'KB', 'MB', 'GB', 'TB'];
-                                            const i = Math.floor(Math.log(bytes) / Math.log(k));
-                                            return parseFloat((bytes / Math.pow(k, i)).toFixed(2)) + ' ' + sizes[i];
-                                        }
-
-                                        // 드래그 앤 드롭 기능
-                                        const dropZone = document.querySelector('.file-upload-container');
-
-                                        dropZone.addEventListener('dragover', (e) => {
-                                            e.preventDefault();
-                                            dropZone.style.borderColor = '#007bff';
-                                        });
-
-                                        dropZone.addEventListener('dragleave', () => {
-                                            dropZone.style.borderColor = '#ccc';
-                                        });
-
-                                        dropZone.addEventListener('drop', (e) => {
-                                            e.preventDefault();
-                                            dropZone.style.borderColor = '#ccc';
-                                            const newFiles = Array.from(e.dataTransfer.files);
-                                            selectedFiles = [...selectedFiles, ...newFiles];
-                                            updateFileList();
-                                        });
-                                    </script>
+                                </li>
+                                <li>
+                                    <p class="tit">multiple</p>
+                                    <div class="file-upload-container">
+                                        <label for="file-upload1-2" class="file-upload-label">
+                                            <svg class="upload-icon" xmlns="http://www.w3.org/2000/svg" width="24"
+                                                height="24" viewBox="0 0 24 24">
+                                                <path
+                                                    d="M19.35 10.04C18.67 6.59 15.64 4 12 4 9.11 4 6.6 5.64 5.35 8.04 2.34 8.36 0 10.91 0 14c0 3.31 2.69 6 6 6h13c2.76 0 5-2.24 5-5 0-2.64-2.05-4.78-4.65-4.96zM14 13v4h-4v-4H7l5-5 5 5h-3z" />
+                                            </svg>
+                                            <span>파일 선택 또는 드래그 앤 드롭</span>
+                                        </label>
+                                        <input id="file-upload1-2" type="file" class="file-upload-input" multiple
+                                            accept=".jpg,.jpeg,.png,.pdf">
+                                        <div class="file-list"></div>
+                                        <div class="upload-status"></div>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="grp_component">
+                        <p class="title">Design</p>
+                        <div class="comp">
+                            <p class="title">defult</p>
+                            <ul>
+                                <li>
+                                    <p class="tit">defult</p>
+                                    <div class="file-upload-container">
+                                        <label for="file-upload2-1" class="file-upload-label">
+                                            <svg class="upload-icon" xmlns="http://www.w3.org/2000/svg" width="24"
+                                                height="24" viewBox="0 0 24 24">
+                                                <path
+                                                    d="M19.35 10.04C18.67 6.59 15.64 4 12 4 9.11 4 6.6 5.64 5.35 8.04 2.34 8.36 0 10.91 0 14c0 3.31 2.69 6 6 6h13c2.76 0 5-2.24 5-5 0-2.64-2.05-4.78-4.65-4.96zM14 13v4h-4v-4H7l5-5 5 5h-3z" />
+                                            </svg>
+                                            <span>파일 선택 또는 드래그 앤 드롭</span>
+                                        </label>
+                                        <input id="file-upload2-1" type="file" class="file-upload-input"
+                                            accept=".jpg,.jpeg,.png,.pdf">
+                                        <div class="file-list"></div>
+                                        <div class="upload-status"></div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <p class="tit">multiple</p>
+                                    <div class="file-upload-container">
+                                        <label for="file-upload2-2" class="file-upload-label">
+                                            <svg class="upload-icon" xmlns="http://www.w3.org/2000/svg" width="24"
+                                                height="24" viewBox="0 0 24 24">
+                                                <path
+                                                    d="M19.35 10.04C18.67 6.59 15.64 4 12 4 9.11 4 6.6 5.64 5.35 8.04 2.34 8.36 0 10.91 0 14c0 3.31 2.69 6 6 6h13c2.76 0 5-2.24 5-5 0-2.64-2.05-4.78-4.65-4.96zM14 13v4h-4v-4H7l5-5 5 5h-3z" />
+                                            </svg>
+                                            <span>파일 선택 또는 드래그 앤 드롭</span>
+                                        </label>
+                                        <input id="file-upload2-2" type="file" class="file-upload-input" multiple
+                                            accept=".jpg,.jpeg,.png,.pdf">
+                                        <div class="file-list"></div>
+                                        <div class="upload-status"></div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <p class="tit">disabled</p>
+                                    <div class="file-upload-container">
+                                        <label for="file-upload2-3" class="file-upload-label">
+                                            <svg class="upload-icon" xmlns="http://www.w3.org/2000/svg" width="24"
+                                                height="24" viewBox="0 0 24 24">
+                                                <path
+                                                    d="M19.35 10.04C18.67 6.59 15.64 4 12 4 9.11 4 6.6 5.64 5.35 8.04 2.34 8.36 0 10.91 0 14c0 3.31 2.69 6 6 6h13c2.76 0 5-2.24 5-5 0-2.64-2.05-4.78-4.65-4.96zM14 13v4h-4v-4H7l5-5 5 5h-3z" />
+                                            </svg>
+                                            <span>파일 선택 또는 드래그 앤 드롭</span>
+                                        </label>
+                                        <input id="file-upload2-3" type="file" class="file-upload-input" disabled
+                                            accept=".jpg,.jpeg,.png,.pdf">
+                                        <div class="file-list"></div>
+                                        <div class="upload-status"></div>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="comp">
+                            <p class="title">Box</p>
+                            <ul>
+                                <li>
+                                    <p class="tit">defult</p>
+                                    <div class="file-upload-container">
+                                        <label for="file-upload3-1" class="file-upload-label">
+                                            <svg class="upload-icon" xmlns="http://www.w3.org/2000/svg" width="24"
+                                                height="24" viewBox="0 0 24 24">
+                                                <path
+                                                    d="M19.35 10.04C18.67 6.59 15.64 4 12 4 9.11 4 6.6 5.64 5.35 8.04 2.34 8.36 0 10.91 0 14c0 3.31 2.69 6 6 6h13c2.76 0 5-2.24 5-5 0-2.64-2.05-4.78-4.65-4.96zM14 13v4h-4v-4H7l5-5 5 5h-3z" />
+                                            </svg>
+                                            <span>파일 선택 또는 드래그 앤 드롭</span>
+                                        </label>
+                                        <input id="file-upload3-1" type="file" class="file-upload-input" multiple
+                                            accept=".jpg,.jpeg,.png,.pdf">
+                                        <div class="file-list"></div>
+                                        <div class="upload-status"></div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <p class="tit">multiple</p>
+                                    <div class="file-upload-container">
+                                        <label for="file-upload3-2" class="file-upload-label">
+                                            <svg class="upload-icon" xmlns="http://www.w3.org/2000/svg" width="24"
+                                                height="24" viewBox="0 0 24 24">
+                                                <path
+                                                    d="M19.35 10.04C18.67 6.59 15.64 4 12 4 9.11 4 6.6 5.64 5.35 8.04 2.34 8.36 0 10.91 0 14c0 3.31 2.69 6 6 6h13c2.76 0 5-2.24 5-5 0-2.64-2.05-4.78-4.65-4.96zM14 13v4h-4v-4H7l5-5 5 5h-3z" />
+                                            </svg>
+                                            <span>파일 선택 또는 드래그 앤 드롭</span>
+                                        </label>
+                                        <input id="file-upload3-2" type="file" class="file-upload-input" multiple
+                                            accept=".jpg,.jpeg,.png,.pdf">
+                                        <div class="file-list"></div>
+                                        <div class="upload-status"></div>
+                                    </div>
                                 </li>
                             </ul>
                         </div>
                     </div>
                 </section>
+                <script>
+                    class FileUploader {
+                        constructor(container) {
+                            this.container = container;
+                            this.fileUpload = container.querySelector('.file-upload-input');
+                            this.fileList = container.querySelector('.file-list');
+                            this.uploadStatus = container.querySelector('.upload-status');
+                            this.selectedFiles = [];
+
+                            this.initEventListeners();
+                        }
+
+                        initEventListeners() {
+                            this.fileUpload.addEventListener('change', this.handleFileSelect.bind(this));
+                            this.container.addEventListener('dragover', this.handleDragOver.bind(this));
+                            this.container.addEventListener('dragleave', this.handleDragLeave.bind(this));
+                            this.container.addEventListener('drop', this.handleDrop.bind(this));
+                            this.fileList.addEventListener('click', this.handleDeleteClick.bind(this));
+                        }
+
+                        handleFileSelect(event) {
+                            const newFiles = Array.from(event.target.files);
+                            this.selectedFiles = [...this.selectedFiles, ...newFiles];
+                            this.updateFileList();
+                        }
+
+                        handleDragOver(e) {
+                            e.preventDefault();
+                            this.container.style.borderColor = '#007bff';
+                        }
+
+                        handleDragLeave() {
+                            this.container.style.borderColor = '#ccc';
+                        }
+
+                        handleDrop(e) {
+                            e.preventDefault();
+                            this.container.style.borderColor = '#ccc';
+                            const newFiles = Array.from(e.dataTransfer.files);
+                            this.selectedFiles = [...this.selectedFiles, ...newFiles];
+                            this.updateFileList();
+                        }
+
+                        handleDeleteClick(event) {
+                            if (event.target.classList.contains('delete-btn')) {
+                                const index = parseInt(event.target.dataset.index);
+                                this.deleteFile(index);
+                            }
+                        }
+
+                        updateFileList() {
+                            this.fileList.innerHTML = '';
+                            this.uploadStatus.textContent = '';
+
+                            this.selectedFiles.forEach((file, index) => {
+                                const fileItem = document.createElement('div');
+                                fileItem.className = 'file-item';
+                                fileItem.innerHTML = `
+                            <span>${file.name} (${this.formatFileSize(file.size)})</span>
+                            <button class="delete-btn" data-index="${index}">삭제</button>`;
+                                this.fileList.appendChild(fileItem);
+                            });
+
+                            this.uploadStatus.textContent = `${this.selectedFiles.length}개의 파일이 선택되었습니다.`;
+                        }
+
+                        deleteFile(index) {
+                            this.selectedFiles.splice(index, 1);
+                            this.updateFileList();
+                        }
+
+                        formatFileSize(bytes) {
+                            if (bytes === 0) return '0 Bytes';
+                            const k = 1024;
+                            const sizes = ['Bytes', 'KB', 'MB', 'GB', 'TB'];
+                            const i = Math.floor(Math.log(bytes) / Math.log(k));
+                            return parseFloat((bytes / Math.pow(k, i)).toFixed(2)) + ' ' + sizes[i];
+                        }
+                    }
+
+                    // DOM이 완전히 로드된 후 FileUploader 인스턴스를 생성합니다.
+                    document.addEventListener('DOMContentLoaded', () => {
+                        document.querySelectorAll('.file-upload-container').forEach(container => {
+                            new FileUploader(container);
+                        });
+                    });
+                </script>
                 <section class="box_tbl">
                     <h3>Attribute 속성</h3>
                     <table>

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dynamic CSS Variables</title>
+</head>
+<body>
+    <input type="color" id="colorPicker" value="#3b82f6">
+    <button onclick="generateCSS()">Generate CSS</button>
+
+    <script>
+        function generateCSS() {
+            const color = document.getElementById('colorPicker').value;
+            const root = document.documentElement;
+            
+            root.style.setProperty('--primary-500', color);
+            
+            const cssContent = `:root {
+                --primary-500: ${color};
+                --primary-100: ${lightenDarkenColor(color, 80)};
+                --primary-900: ${lightenDarkenColor(color, -40)};
+            }`;
+            
+            const blob = new Blob([cssContent], {type: 'text/css'});
+            const url = URL.createObjectURL(blob);
+            
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = 'root.css';
+            a.click();
+            
+            URL.revokeObjectURL(url);
+        }
+
+        function lightenDarkenColor(col, amt) {
+            let usePound = false;
+            if (col[0] == "#") {
+                col = col.slice(1);
+                usePound = true;
+            }
+            let num = parseInt(col,16);
+            let r = (num >> 16) + amt;
+            let b = ((num >> 8) & 0x00FF) + amt;
+            let g = (num & 0x0000FF) + amt;
+            if (r > 255) r = 255;
+            else if  (r < 0) r = 0;
+            if (b > 255) b = 255;
+            else if  (b < 0) b = 0;
+            if (g > 255) g = 255;
+            else if  (g < 0) g = 0;
+            return (usePound?"#":"") + (g | (b << 8) | (r << 16)).toString(16);
+        }
+    </script>
+</body>
+</html>

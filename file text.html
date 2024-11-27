@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <style>
+        .file-upload {
+            display: flex;
+            align-items: center;
+            margin-bottom: 10px;
+        }
+
+        .file-input {
+            position: absolute;
+            width: 1px;
+            height: 1px;
+            padding: 0;
+            margin: -1px;
+            overflow: hidden;
+            clip: rect(0, 0, 0, 0);
+            white-space: nowrap;
+            border: 0;
+        }
+
+        .file-name {
+            flex-grow: 1;
+            margin-right: 10px;
+            padding: 5px;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        .file-label {
+            padding: 5px 10px;
+            background-color: #4CAF50;
+            color: white;
+            cursor: pointer;
+            border-radius: 3px;
+        }
+
+        .file-label:hover,
+        .file-label:focus {
+            background-color: #45a049;
+        }
+
+        .file-label:focus {
+            outline: 2px solid #000;
+            outline-offset: 2px;
+        }
+    </style>
+
+    
+    <div class="file-upload">
+        <input type="file" id="file-input-1" class="file-input" multiple>
+        <label for="file-input-1" class="file-label">파일 선택</label>
+        <input type="text" id="file-name-1" class="file-name" readonly placeholder="선택된 파일 없음" aria-live="polite">
+    </div>
+
+    <div class="file-upload">
+        <input type="file" id="file-input-2" class="file-input" multiple>
+        <label for="file-input-2" class="file-label">파일 선택</label>
+        <input type="text" id="file-name-2" class="file-name" readonly placeholder="선택된 파일 없음" aria-live="polite">
+    </div>
+
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const fileUploads = document.querySelectorAll('.file-upload');
+
+            fileUploads.forEach(upload => {
+                const fileInput = upload.querySelector('.file-input');
+                const fileNameInput = upload.querySelector('.file-name');
+
+                fileInput.addEventListener('change', function () {
+                    handleFileSelect(this, fileNameInput);
+                });
+            });
+
+            function handleFileSelect(fileInput, fileNameInput) {
+                if (fileInput.files && fileInput.files.length > 0) {
+                    const fileNames = Array.from(fileInput.files).map(file => file.name);
+                    fileNameInput.value = fileNames.join(', ');
+                    fileNameInput.title = fileNames.join('\n'); // 툴팁에 모든 파일 이름 표시
+                } else {
+                    fileNameInput.value = '';
+                    fileNameInput.title = '';
+                }
+            }
+        });
+    </script>
+</body>
+
+</html>
