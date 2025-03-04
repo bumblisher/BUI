@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="resource/css/reset.css">
+    <link rel="stylesheet" href="resource/css/old_common.css">
+    <script src="resource/js/jquery-3.4.1.min.js"></script>
+    <script src="resource/js/main.js"></script>
+    <title>BUI</title>
+</head>
+
+<body>
+    <div class="wrap">
+        <aside>
+            <h1 class="logo"><a href="#">BUI</a></h1>
+            <ul class="nav_menu">
+                <li class="active">
+                    <a href="#">가이드</a>
+                    <ul>
+                        <li class="on"><a href="#">메뉴메뉴</a></li>
+                        <li><a href="#">메뉴메뉴</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#">컴포넌트</a>
+                    <ul>
+                        <li><a href="#">메뉴메뉴</a></li>
+                        <li><a href="#">메뉴메뉴</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#">TECH</a>
+                    <ul>
+                        <li><a href="#">메뉴메뉴</a></li>
+                        <li><a href="#">메뉴메뉴</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#">설정</a>
+                    <ul>
+                        <li><a href="#">메뉴메뉴</a></li>
+                        <li><a href="#">메뉴메뉴</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </aside>
+        <div class="container">
+            <header>
+                <button class="btn_menu"></button>
+                <p>접속IP : 218.237.65.1</p>
+                <a href="https://www.youtube.com/watch?v=SY5X2p0Nbgk">프라이머 참고</a>
+                <div class="right">
+                    <span class="name">백종오 (S등급)님</span>
+                    <span>이 로그인하셨습니다 </span>
+                    <div class="grp_topmenu">
+                        <button class="btn_noti">알림</button>
+                        <button>공지사항</button>
+                        <button>로그아웃</button>
+                    </div>
+                </div>
+            </header>
+            <div class="tab_main">
+                <ul class="tab_main_list">
+                    <li><a href="#">타이틀</a><button class="close"></button></li>
+                    <li><a href="#">타이틀</a><button class="close"></button></li>
+                    <li><a href="#" class="on">Form요소</a><button class="close"></button></li>
+                </ul>
+                <div class="tit_main">
+                    <h2>쉽게 그리기</h2>
+                    <p>그리기 쉽게 만들어봅시다.</p>
+                </div>
+                <div class="ly_content">
+                    <div class="content">
+                        <div class="grp_component">
+                            <p class="title">Button</p>
+                            <table class="easy_tbl">
+                                <colgroup>
+                                    <col style="width: 150px;">
+                                    <col>
+                                </colgroup>
+                                <tr>
+                                    <th><span>제목</span>
+                                    </th>
+                                    <td>
+                                        <div class="easy_wrap">
+                                            <div class="grp_sch">
+                                                <input type="text">
+                                                <button>검색</button>
+                                            </div>
+                                            <select name="" id="">
+                                                <option value="">선택1</option>
+                                                <option value="">선택2</option>
+                                            </select>
+                                            <button>버튼3</button>
+                                        </div>
+                                    </td>
+                                </tr>
+                            </table>
+                        </div>
+                    </div>
+                    <div class="content set">
+                        <div id="inputForm" class="form_setting">
+                            <h3>Easy Draw</h3>
+                            <ul class="form_ul">
+                                <li>
+                                    <label for="inputBorderWidth">배치</label>
+                                    <button class="easy-button" onclick="setEasyWrapClass(this, 'hor')">버튼
+                                        가로</button>
+                                    <button class="easy-button" onclick="setEasyWrapClass(this, 'ver')">버튼
+                                        세로</button>
+                                </li>
+                            </ul>
+                            <ul class="form_ul">
+                                <li>
+                                    <label for="inputBorderWidth">정렬(가로)</label>
+                                    <button class="icon1 easy-button2"
+                                        onclick="setEasyWrapClass2(this, 'jc_start')"></button>
+                                    <button class="icon2 easy-button2"
+                                        onclick="setEasyWrapClass2(this, 'jc_center')"></button>
+                                    <button class="icon3 easy-button2"
+                                        onclick="setEasyWrapClass2(this, 'jc_end')"></button>
+                                    <button class="icon4 easy-button2"
+                                        onclick="setEasyWrapClass2(this, 'jc_between')"></button>
+                                </li>
+                            </ul>
+                            <ul class="form_ul">
+                                <li>
+                                    <label for="inputBorderWidth">정렬(세로)</label>
+                                    <button class="icon5 easy-button3"
+                                        onclick="setEasyWrapClass3(this, 'ai_start')"></button>
+                                    <button class="icon6 easy-button3"
+                                        onclick="setEasyWrapClass3(this, 'ai_center')"></button>
+                                    <button class="icon7 easy-button3"
+                                        onclick="setEasyWrapClass3(this, 'ai_end')"></button>
+                                </li>
+                            </ul>
+                            <ul class="form_ul">
+                                <li>
+                                    <label for="inputBorderWidth">간격</label>
+                                    <input type="text">
+                                </li>
+                            </ul>
+                            <button type="button" onclick="applyStyles()" class="btn_apply">Apply</button>
+                        </div>
+                        <script>
+                            function setEasyWrapClass(clickedButton, className) {
+                                // 모든 버튼 선택
+                                const buttons = document.querySelectorAll('.easy-button');
+
+                                // .easy_wrap 요소 선택
+                                const easyWrap = document.querySelector('.easy_wrap');
+
+                                // 모든 버튼에서 active 클래스 제거
+                                buttons.forEach(button => {
+                                    button.classList.remove('active');
+                                });
+
+                                // 클릭된 버튼에 active 클래스 추가
+                                clickedButton.classList.add('active');
+
+                                // .easy_wrap에서 모든 관련 클래스 제거
+                                if (1) {
+                                    easyWrap.classList.remove('ver', 'hor');
+                                }
+
+
+                                // 새로운 클래스 추가
+                                easyWrap.classList.add(className);
+                            }
+
+                            function setEasyWrapClass2(clickedButton, className) {
+                                // 모든 버튼 선택
+                                const buttons = document.querySelectorAll('.easy-button2');
+
+                                // .easy_wrap 요소 선택
+                                const easyWrap = document.querySelector('.easy_wrap');
+
+                                // 모든 버튼에서 active 클래스 제거
+                                buttons.forEach(button => {
+                                    button.classList.remove('active');
+                                });
+
+                                // 클릭된 버튼에 active 클래스 추가
+                                clickedButton.classList.add('active');
+
+                                // .easy_wrap에서 모든 관련 클래스 제거
+                                if (1) {
+                                    easyWrap.classList.remove('jc_start', 'jc_center', 'jc_end', 'jc_between');
+                                }
+
+
+                                // 새로운 클래스 추가
+                                easyWrap.classList.add(className);
+                            }
+
+                            function setEasyWrapClass3(clickedButton, className) {
+                                // 모든 버튼 선택
+                                const buttons = document.querySelectorAll('.easy-button3');
+
+                                // .easy_wrap 요소 선택
+                                const easyWrap = document.querySelector('.easy_wrap');
+
+                                // 모든 버튼에서 active 클래스 제거
+                                buttons.forEach(button => {
+                                    button.classList.remove('active');
+                                });
+
+                                // 클릭된 버튼에 active 클래스 추가
+                                clickedButton.classList.add('active');
+
+                                // .easy_wrap에서 모든 관련 클래스 제거
+                                if (1) {
+                                    easyWrap.classList.remove('ai_start', 'ai_center', 'ai_end');
+                                }
+
+
+                                // 새로운 클래스 추가
+                                easyWrap.classList.add(className);
+                            }
+                        </script>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

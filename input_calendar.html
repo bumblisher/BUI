@@ -9,6 +9,61 @@
     <script src="resource/js/jquery-3.4.1.min.js"></script>
     <script src="resource/js/main.js"></script>
     <title>BUI</title>
+
+    <script>
+        class Calendar {
+            constructor() {
+                this.date = new Date();
+                this.init();
+            }
+
+            init() {
+                this.renderCalendar();
+                this.addEventListeners();
+            }
+
+            renderCalendar() {
+                const year = this.date.getFullYear();
+                const month = this.date.getMonth();
+                const firstDay = new Date(year, month, 1);
+                const lastDay = new Date(year, month + 1, 0);
+                const daysInMonth = lastDay.getDate();
+                const startingDay = firstDay.getDay();
+
+                // 상단 날짜 업데이트
+                document.querySelector('.current-date').textContent = `${year}년 ${month + 1}월`;
+
+                let calendarHTML = '<ul class="calendar-days">';
+                const days = ['일', '월', '화', '수', '목', '금', '토'];
+                days.forEach(day => {
+                    calendarHTML += `<li class="day-name">${day}</li>`;
+                });
+
+                for (let i = 0; i < startingDay; i++) {
+                    calendarHTML += '<li class="day empty"></li>';
+                }
+
+                for (let i = 1; i <= daysInMonth; i++) {
+                    calendarHTML += `<li class="day">${i}</li>`;
+                }
+
+                calendarHTML += '</ul>';
+                document.querySelector('.calendar-body').innerHTML = calendarHTML;
+            }
+
+            addEventListeners() {
+                document.querySelector('.prev-btn').addEventListener('click', () => {
+                    this.date.setMonth(this.date.getMonth() - 1);
+                    this.renderCalendar();
+                });
+                document.querySelector('.next-btn').addEventListener('click', () => {
+                    this.date.setMonth(this.date.getMonth() + 1);
+                    this.renderCalendar();
+                });
+            }
+        }
+
+    </script>
 </head>
 
 <body>
@@ -42,9 +97,9 @@
                             <li><a href="input_check.html">Input [Check]</a></li>
                             <li><a href="input_radio.html">Input [Radio]</a></li>
                             <li><a href="input_rage.html">Input [Range]</a></li>
-                            <li class="on"><a href="input_color.html">Input [Color]</a></li>
+                            <li><a href="input_color.html">Input [Color]</a></li>
                             <li><a href="input_file.html">Input [File]</a></li>
-                            <li><a href="input_calendar.html">Input [Calendar]</a></li>
+                            <li class="on"><a href="input_calendar.html">Input [Calendar]</a></li>
                         </ul>
                     </li>
                     <li>
@@ -73,87 +128,19 @@
                             <p class="title">Input [Color]</p>
                             <ul>
                                 <li>
-                                    <div class="color-picker">
-                                        <input type="color" id="colorInput" value="#000000">
-                                        <input type="text" id="hexInput" value="#000000">
-                                        <button id="downloadBtn" class="btn_cm">Download root.css</button>
+                                    <div class="calendar-container">
+                                        <div class="calendar-header">
+                                            <button class="prev-btn">이전</button>
+                                            <span class="current-date">2024년 12월</span>
+                                            <button class="next-btn">다음</button>
+                                        </div>
+                                        <div class="calendar-body">
+                                            <!-- 달력 내용이 여기에 동적으로 생성됩니다 -->
+                                        </div>
                                     </div>
-                                    
                                     <script>
-                                        const colorInput = document.getElementById('colorInput');
-                                        const hexInput = document.getElementById('hexInput');
-                                        const downloadBtn = document.getElementById('downloadBtn');
-                                    
-                                        colorInput.addEventListener('input', updateHexInput);
-                                        hexInput.addEventListener('input', updateColorInput);
-                                        downloadBtn.addEventListener('click', downloadRootCSS);
-                                    
-                                        function updateHexInput(e) {
-                                            hexInput.value = e.target.value;
-                                            updateCSSVariable(e.target.value);
-                                        }
-                                    
-                                        function updateColorInput(e) {
-                                            let hex = e.target.value;
-                                            if (hex.charAt(0) !== '#') {
-                                                hex = '#' + hex;
-                                            }
-                                            if (hex.length === 4) {
-                                                hex = '#' + hex[1] + hex[1] + hex[2] + hex[2] + hex[3] + hex[3];
-                                            }
-                                            if (/^#[0-9A-Fa-f]{6}$/.test(hex)) {
-                                                colorInput.value = hex;
-                                                updateCSSVariable(hex);
-                                            }
-                                        }
-                                    
-                                        function updateCSSVariable(color) {
-                                            document.documentElement.style.setProperty('--primary-500', color);
-                                        }
-                                    
-                                        function downloadRootCSS() {
-                                            const color = colorInput.value;
-                                            const cssContent = `:root {\n  --primary-500: ${color};\n}`;
-                                            const blob = new Blob([cssContent], { type: 'text/css' });
-                                            const url = URL.createObjectURL(blob);
-                                            const a = document.createElement('a');
-                                            a.href = url;
-                                            a.download = 'root.css';
-                                            document.body.appendChild(a);
-                                            a.click();
-                                            document.body.removeChild(a);
-                                            URL.revokeObjectURL(url);
-                                        }
+                                        const calendar = new Calendar();
                                     </script>
-                                    <!-- <div class="color-picker">
-                                        <input type="color" id="colorInput" value="#000000">
-                                        <input type="text" id="hexInput" value="#000000">
-                                    </div>
-                                
-                                    <script>
-                                        const colorInput = document.getElementById('colorInput');
-                                        const hexInput = document.getElementById('hexInput');
-                                
-                                        colorInput.addEventListener('input', updateHexInput);
-                                        hexInput.addEventListener('input', updateColorInput);
-                                
-                                        function updateHexInput(e) {
-                                            hexInput.value = e.target.value;
-                                        }
-                                
-                                        function updateColorInput(e) {
-                                            let hex = e.target.value;
-                                            if (hex.charAt(0) !== '#') {
-                                                hex = '#' + hex;
-                                            }
-                                            if (hex.length === 4) {
-                                                hex = '#' + hex[1] + hex[1] + hex[2] + hex[2] + hex[3] + hex[3];
-                                            }
-                                            if (/^#[0-9A-Fa-f]{6}$/.test(hex)) {
-                                                colorInput.value = hex;
-                                            }
-                                        }
-                                    </script> -->
                                 </li>
                             </ul>
                         </div>
