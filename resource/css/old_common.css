@@ -144,24 +144,24 @@ header > .right .btn_noti.on{background: url(../images/old/btn_noti_on.svg) cent
 .form_ul button{padding: 8px;border: 1px solid #aaa;background: #fff;height: 40px;font-size: 14px;}
 .form_ul button.on{background: #4a84d4;}
 .form_ul button[class*="icon"]{width: 40px;}
-.form_ul button.icon1{background: url(/resource/images/easy/align_horizontal_left.svg) no-repeat center;}
-.form_ul button.icon2{background: url(/resource/images/easy/align_horizontal_center.svg) no-repeat center;}
-.form_ul button.icon3{background: url(/resource/images/easy/align_horizontal_right.svg) no-repeat center;}
-.form_ul button.icon4{background: url(/resource/images/easy/horizontal_distribute.svg) no-repeat center;}
+.form_ul button.icon1{background: url(../images/easy/align_horizontal_left.svg) no-repeat center;}
+.form_ul button.icon2{background: url(../images/easy/align_horizontal_center.svg) no-repeat center;}
+.form_ul button.icon3{background: url(../images/easy/align_horizontal_right.svg) no-repeat center;}
+.form_ul button.icon4{background: url(../images/easy/horizontal_distribute.svg) no-repeat center;}
 
-.form_ul button.icon5{background: url(/resource/images/easy/align_vertical_top.svg) no-repeat center;}
-.form_ul button.icon6{background: url(/resource/images/easy/align_vertical_center.svg) no-repeat center;}
-.form_ul button.icon7{background: url(/resource/images/easy/align_vertical_bottom.svg) no-repeat center;}
+.form_ul button.icon5{background: url(../images/easy/align_vertical_top.svg) no-repeat center;}
+.form_ul button.icon6{background: url(../images/easy/align_vertical_center.svg) no-repeat center;}
+.form_ul button.icon7{background: url(../images/easy/align_vertical_bottom.svg) no-repeat center;}
 
-.form_ul button.move_icon1{background: url(/resource/images/easy/move_left_end.svg) no-repeat center;}
-.form_ul button.move_icon2{background: url(/resource/images/easy/move_left.svg) no-repeat center;}
-.form_ul button.move_icon3{background: url(/resource/images/easy/move_right.svg) no-repeat center;}
-.form_ul button.move_icon4{background: url(/resource/images/easy/move_right_end.svg) no-repeat center;}
+.form_ul button.move_icon1{background: url(../images/easy/move_left_end.svg) no-repeat center;}
+.form_ul button.move_icon2{background: url(../images/easy/move_left.svg) no-repeat center;}
+.form_ul button.move_icon3{background: url(../images/easy/move_right.svg) no-repeat center;}
+.form_ul button.move_icon4{background: url(../images/easy/move_right_end.svg) no-repeat center;}
 
-button#move-top{background: url(/resource/images/easy/move_left_end.svg) no-repeat center;}
-button#move-up{background: url(/resource/images/easy/move_left.svg) no-repeat center;}
-button#move-down{background: url(/resource/images/easy/move_right.svg) no-repeat center;}
-button#move-bottom{background: url(/resource/images/easy/move_right_end.svg) no-repeat center;}
+button#move-top{background: url(../images/easy/move_left_end.svg) no-repeat center;}
+button#move-up{background: url(../images/easy/move_left.svg) no-repeat center;}
+button#move-down{background: url(../images/easy/move_right.svg) no-repeat center;}
+button#move-bottom{background: url(../images/easy/move_right_end.svg) no-repeat center;}
 
 .easy_tbl{width: 100%;}
 .easy_tbl,
@@ -248,19 +248,8 @@ button#move-bottom{background: url(/resource/images/easy/move_right_end.svg) no-
 .easy_set > *::before{content:'';position: absolute;left: 0;top:-100%;border-left:1px dashed #f47070;height: 100%;}
 .easy_set > *::after{content:'';position: absolute;right: 0;top:-100%;border-left:1px dashed #f47070;height: 100%;}
 
-.movable-item.selected {
-  background-color: #d0d0ff;
-}
+.movable-item.selected {  background-color: #d0d0ff;}
 
-#button-container {
-  position: absolute;
-  margin-top: 4px;
-  background-color: #ffffff;
-  padding: 5px;
-  border: 1px solid #ccc;
-  display: none;
-  height: 36px;
-  box-sizing: border-box;
-}
+#button-container {position: absolute;margin-top: 4px;background-color: #ffffff;padding: 5px;border: 1px solid #ccc;display: none;height: 36px;box-sizing: border-box;}
 #button-container button{width:24px;height: 24px;margin: 0;}
 #button-container button:hover{background-color: #eee;}
