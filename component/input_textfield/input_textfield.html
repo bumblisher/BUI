@@ -1,0 +1,726 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="resource/css/reset.css">
+    <link rel="stylesheet" href="resource/css/common.css">
+    <script src="resource/js/jquery-3.4.1.min.js"></script>
+    <script src="resource/js/main.js"></script>
+    <title>BUI</title>
+</head>
+
+<body>
+    <div class="wrap">
+        <header>
+            <h1 class="logo"><a href="index.html">BUI</a></h1>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="style.html">StyleGuide</a></li>
+                    <li><a href="#">Component</a></li>
+                    <li><a href="#">Module</a></li>
+                    <li><a href="https://www.youtube.com/watch?v=SY5X2p0Nbgk">프레이머</a></li>
+                </ul>
+            </nav>
+        </header>
+        <div class="container">
+            <aside>
+                <ul class="nav_menu">
+                    <li>
+                        <a href="#">즐겨찾기</a>
+                        <ul>
+                            <li><a href="input_textfield.html">input</a></li>
+                            <li><a href="#">checkbox</a></li>
+                        </ul>
+                    </li>
+                    <li class="active">
+                        <a href="#">컴포넌트</a>
+                        <ul>
+                            <li class="on"><a href="input_textfield.html">Input [TextField]</a></li>
+                            <li><a href="input_check.html">Input [Check]</a></li>
+                            <li><a href="input_radio.html">Input [Radio]</a></li>
+                            <li><a href="input_rage.html">Input [Range]</a></li>
+                            <li><a href="input_color.html">Input [Color]</a></li>
+                            <li><a href="input_file.html">Input [File]</a></li>
+                            <li><a href="input_calendar.html">Input [Calendar]</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#">TECH</a>
+                        <ul>
+                            <li><a href="#">메뉴메뉴</a></li>
+                            <li><a href="#">메뉴메뉴</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#">설정</a>
+                        <ul>
+                            <li><a href="#">메뉴메뉴</a></li>
+                            <li><a href="#">메뉴메뉴</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </aside>
+            <div class="content">
+                <section>
+                    <h3>Input [TextField]</h3>
+                    <p>Input 요소로서 어쩌고 저쩌고 입니다.</p>
+                    <div class="grp_component">
+                        <p class="title">Type</p>
+                        <div class="comp">
+                            <p class="title">Input [text]</p>
+                            <ul>
+                                <li>
+                                    <p class="tit">defult</p>
+                                    <div class="BMipt_text">
+                                        <input type="text" class="ipt_text" value="defult text">
+                                    </div>
+                                </li>
+                                <li>
+                                    <p class="tit">readonly</p>
+                                    <div class="BMipt_text">
+                                        <input type="text" class="ipt_text" readonly="readonly" value="readonly text">
+                                    </div>
+                                </li>
+                                <li>
+                                    <p class="tit">disabled</p>
+                                    <div class="BMipt_text">
+                                        <input type="text" class="ipt_text" disabled="disabled" value="disabled text">
+                                    </div>
+                                </li>
+                                <li>
+                                    <p class="tit">placeholder</p>
+                                    <div class="BMipt_text">
+                                        <input type="text" class="ipt_text" placeholder="placeholder text">
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="comp">
+                            <p class="title">Input [Password]</p>
+                            <ul>
+                                <li>
+                                    <p class="tit">defult</p>
+                                    <div class="BMipt_password">
+                                        <input type="password" class="ipt_password" value="123456789">
+                                    </div>
+                                </li>
+                                <li>
+                                    <p class="tit">readonly</p>
+                                    <div class="BMipt_password">
+                                        <input type="password" class="ipt_password" readonly="readonly"
+                                            value="123456789">
+                                    </div>
+                                </li>
+                                <li>
+                                    <p class="tit">disabled</p>
+                                    <div class="BMipt_password">
+                                        <input type="password" class="ipt_password" disabled="disabled"
+                                            value="123456789">
+                                    </div>
+                                </li>
+                                <li>
+                                    <p class="tit">placeholder</p>
+                                    <div class="BMipt_password">
+                                        <input type="password" class="ipt_password" placeholder="password text">
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="comp">
+                            <p class="title">Input [Search]</p>
+                            <ul>
+                                <li>
+                                    <p class="tit">defult</p>
+                                    <div class="BMipt_search">
+                                        <input type="search" class="ipt_search" value="defult text">
+                                    </div>
+                                </li>
+                                <li>
+                                    <p class="tit">readonly</p>
+                                    <div class="BMipt_search">
+                                        <input type="search" class="ipt_search" readonly="readonly"
+                                            value="readonly text">
+                                    </div>
+                                </li>
+                                <li>
+                                    <p class="tit">disabled</p>
+                                    <div class="BMipt_search">
+                                        <input type="search" class="ipt_search" disabled="disabled"
+                                            value="disabled text">
+                                    </div>
+                                </li>
+                                <li>
+                                    <p class="tit">placeholder</p>
+                                    <div class="BMipt_search">
+                                        <input type="search" class="ipt_search" placeholder="placeholder search">
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="comp">
+                            <p class="title">Input [Number]</p>
+                            <ul>
+                                <li>
+                                    <p class="tit">defult</p>
+                                    <div class="BMipt_number">
+                                        <input type="number" class="ipt_number" value="123">
+                                    </div>
+                                </li>
+                                <li>
+                                    <p class="tit">readonly</p>
+                                    <div class="BMipt_number">
+                                        <input type="number" class="ipt_number" readonly="readonly" value="123">
+                                    </div>
+                                </li>
+                                <li>
+                                    <p class="tit">disabled</p>
+                                    <div class="BMipt_number">
+                                        <input type="number" class="ipt_number" disabled="disabled" value="123">
+                                    </div>
+                                </li>
+                                <li>
+                                    <p class="tit">placeholder</p>
+                                    <div class="BMipt_number">
+                                        <input type="number" class="ipt_number" placeholder="placeholder number">
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="grp_component">
+                        <p class="title">Design</p>
+                        <div class="comp">
+                            <p class="title">Defult</p>
+                            <ul>
+                                <li>
+                                    <p class="tit">defult</p>
+                                    <div class="BMipt_text">
+                                        <input type="text" class="ipt_text" value="defult text">
+                                    </div>
+                                </li>
+                                <li>
+                                    <p class="tit">readonly</p>
+                                    <div class="BMipt_text">
+                                        <input type="text" class="ipt_text" readonly="readonly" value="readonly text">
+                                    </div>
+                                </li>
+                                <li>
+                                    <p class="tit">disabled</p>
+                                    <div class="BMipt_text">
+                                        <input type="text" class="ipt_text" disabled="disabled" value="disabled text">
+                                    </div>
+                                </li>
+                                <li>
+                                    <p class="tit">placeholder</p>
+                                    <div class="BMipt_text">
+                                        <input type="text" class="ipt_text" placeholder="placeholder text">
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="comp">
+                            <p class="title">Underline</p>
+                            <ul>
+                                <li>
+                                    <p class="tit">defult</p>
+                                    <div class="BMipt_text underline">
+                                        <input type="text" class="ipt_text" value="defult text">
+                                    </div>
+                                </li>
+                                <li>
+                                    <p class="tit">readonly</p>
+                                    <div class="BMipt_text underline">
+                                        <input type="text" class="ipt_text" readonly="readonly" value="readonly text">
+                                    </div>
+                                </li>
+                                <li>
+                                    <p class="tit">disabled</p>
+                                    <div class="BMipt_text underline">
+                                        <input type="text" class="ipt_text" disabled="disabled" value="disabled text">
+                                    </div>
+                                </li>
+                                <li>
+                                    <p class="tit">placeholder</p>
+                                    <div class="BMipt_text underline">
+                                        <input type="text" class="ipt_text" placeholder="placeholder text">
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="grp_component">
+                        <p class="title">Animation</p>
+                        <div class="comp">
+                            <p class="title">Defult</p>
+                            <ul>
+                                <li>
+                                    <p class="tit">ani01</p>
+                                    <div class="BMipt_text ani01">
+                                        <input type="text" class="ipt_text" value="defult text">
+                                    </div>
+                                </li>
+                                <li>
+                                    <p class="tit">ani02</p>
+                                    <div class="BMipt_text ani02">
+                                        <input type="text" class="ipt_text" value="defult text">
+                                    </div>
+                                </li>
+                                <li>
+                                    <p class="tit">ani03</p>
+                                    <div class="BMipt_text ani03">
+                                        <input type="text" class="ipt_text" value="defult text">
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="comp">
+                            <p class="title">Underline</p>
+                            <ul>
+                                <li>
+                                    <p class="tit">ani01</p>
+                                    <div class="BMipt_text underline ani01">
+                                        <input type="text" class="ipt_text" value="defult text">
+                                    </div>
+                                </li>
+                                <li>
+                                    <p class="tit">ani02</p>
+                                    <div class="BMipt_text underline ani02">
+                                        <input type="text" class="ipt_text" value="defult text">
+                                    </div>
+                                </li>
+                                <li>
+                                    <p class="tit">ani03</p>
+                                    <div class="BMipt_text underline ani03">
+                                        <input type="text" class="ipt_text" value="defult text">
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="grp_component">
+                        <p class="title">Mask</p>
+                        <div class="comp">
+                            <ul>
+                                <li>
+                                    <p class="tit">number</p>
+                                    <div class="BMipt_text">
+                                        <input type="text" id="number" class="ipt_text" placeholder="1,234,567,890" style="text-align: right;">
+                                    </div>
+                                </li>
+                                <li>
+                                    <p class="tit">phone</p>
+                                    <div class="BMipt_text">
+                                        <input type="text" id="phone" class="ipt_text" placeholder="010-1234-5678">
+                                    </div>
+                                </li>
+                                <li>
+                                    <p class="tit">date</p>
+                                    <div class="BMipt_text">
+                                        <input type="text" id="date" class="ipt_text" placeholder="YYYY년 MM월 DD일">
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                        <script>
+                            // 숫자를 #,### 형식으로 변환하는 함수
+                            function formatNumber(value) {
+                                return value.replace(/\D/g, '') // 숫자가 아닌 것 제거
+                                    .replace(/\B(?=(\d{3})+(?!\d))/g, ','); // 3자리마다 콤마 추가
+                            }
+
+                            // 입력 처리 함수
+                            function setNumberMask(input) {
+                                input.addEventListener('input', function (event) {
+                                    let cursorPosition = input.selectionStart; // 커서 위치 기억
+                                    let originalLength = input.value.length;   // 원래 길이 기억
+
+                                    // 콤마 적용
+                                    input.value = formatNumber(input.value);
+
+                                    // 콤마가 추가되어도 커서가 원래 위치 유지
+                                    let newLength = input.value.length;
+                                    cursorPosition += newLength - originalLength;
+                                    input.setSelectionRange(cursorPosition, cursorPosition);
+                                });
+
+                                // 입력창에서 Backspace나 Delete 처리
+                                input.addEventListener('keydown', function (event) {
+                                    let key = event.key;
+
+                                    // 숫자 및 제어 키 이외의 입력을 막음 (예: 알파벳)
+                                    if (!/[\dBackspaceDeleteArrowLeftArrowRight]/.test(key)) {
+                                        event.preventDefault();
+                                    }
+                                });
+                            }
+                            const numberInput = document.getElementById('number');
+                            setNumberMask(numberInput);
+
+                            function setInputMask(input, mask) {
+                                input.addEventListener('input', function (event) {
+                                    let value = event.target.value.replace(/\D/g, ''); // 숫자만 허용
+                                    let maskedValue = '';
+                                    let i = 0;
+
+                                    for (let m of mask) {
+                                        if (m === '_') {
+                                            if (i < value.length) {
+                                                maskedValue += value[i++];
+                                            } else {
+                                                break;
+                                            }
+                                        } else {
+                                            maskedValue += m;
+                                        }
+                                    }
+
+                                    event.target.value = maskedValue;
+                                });
+                            }
+
+                            const phoneInput = document.getElementById('phone');
+                            setInputMask(phoneInput, '___-____-____');
+
+                            function setInputMask(input, mask) {
+                                input.addEventListener('input', function (event) {
+                                    let value = event.target.value.replace(/\D/g, ''); // 숫자만 허용
+                                    let maskedValue = '';
+                                    let i = 0;
+
+                                    for (let m of mask) {
+                                        if (m === '_') {
+                                            if (i < value.length) {
+                                                maskedValue += value[i++];
+                                            } else {
+                                                break;
+                                            }
+                                        } else {
+                                            maskedValue += m;
+                                        }
+                                    }
+
+                                    event.target.value = maskedValue;
+                                });
+                            }
+
+                            const dateInput = document.getElementById('date');
+                            setInputMask(dateInput, '____년 __월 __일');
+                        </script>
+                    </div>
+                </section>
+                <section class="box_tbl">
+                    <div class="box_tit">
+                        <h3>Attribute 속성</h3>
+                        <div class="right">
+                            <p class="badge html"></p>
+                            <span>: 태그 속성</span>
+                            <p class="badge plugin"></p>
+                            <span>: 기능 속성</span>
+                            <p class="badge acc"></p>
+                            <span>: 웹접근성 속성</span>
+                            <ul class="list_value">
+                                <li class="defult">기본값</li>
+                                <li>속성값</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th></th>
+                                <th>Attribute(속성)</th>
+                                <th>Value(값)</th>
+                                <th>Description(설명)</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>
+                                    <p class="badge html"></p>
+                                </td>
+                                <td>
+                                    <p>type</p>
+                                </td>
+                                <td>
+                                    <ul class="list_value">
+                                        <li class="defult">text</li>
+                                        <li>password</li>
+                                        <li>search</li>
+                                        <li>number</li>
+                                        <li class="dis">hidden</li>
+                                        <li class="dis">email</li>
+                                        <li class="dis">tel</li>
+                                        <li class="dis">url</li>
+                                    </ul>
+                                </td>
+                                <td>
+                                    <p>인풋을 여러가지 타입으로 사용할수 있습니다.</p>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <p class="badge html"></p>
+                                </td>
+                                <td>
+                                    <p>placeholder</p>
+                                </td>
+                                <td></td>
+                                <td>
+                                    <p>placeholder 텍스트를 입력합니다.</p>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <p class="badge html"></p>
+                                </td>
+                                <td>
+                                    <p>id</p>
+                                </td>
+                                <td></td>
+                                <td>
+                                    <p>id값을 지정합니다.</p>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <p class="badge html"></p>
+                                </td>
+                                <td>
+                                    <p>class</p>
+                                </td>
+                                <td></td>
+                                <td>
+                                    <p>class값을 지정합니다.</p>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <p class="badge html"></p>
+                                </td>
+                                <td>
+                                    <p>readonly</p>
+                                </td>
+                                <td>
+                                    <ul class="list_value">
+                                        <li>true</li>
+                                        <li>false</li>
+                                    </ul>
+                                </td>
+                                <td>
+                                    <p>readonly를 설정합니다.</p>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <p class="badge html"></p>
+                                </td>
+                                <td>
+                                    <p>disabled</p>
+                                </td>
+                                <td>
+                                    <ul class="list_value">
+                                        <li>true</li>
+                                        <li>false</li>
+                                    </ul>
+                                </td>
+                                <td>
+                                    <p>disabled를 설정합니다.</p>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <p class="badge html"></p>
+                                </td>
+                                <td>
+                                    <p>title</p>
+                                </td>
+                                <td></td>
+                                <td>
+                                    <p>title값을 지정합니다.</p>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <p class="badge plugin"></p>
+                                </td>
+                                <td>
+                                    <p>mask</p>
+                                </td>
+                                <td>
+                                    <ul class="list_value">
+                                        <li>number (#,###)</li>
+                                        <li>dash (##-##)</li>
+                                        <li>underbar (##_##)</li>
+                                        <li>text (##월 ##일)</li>
+                                    </ul>
+                                </td>
+                                <td>
+                                    <p>mask를 설정합니다.</p>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <p class="badge plugin"></p>
+                                </td>
+                                <td>
+                                    <p>maskFormat</p>
+                                </td>
+                                <td>####-##-##</td>
+                                <td>
+                                    <p>maskFormat값을 지정합니다.</p>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <p class="badge plugin"></p>
+                                </td>
+                                <td>
+                                    <p>animation</p>
+                                </td>
+                                <td>
+                                    <ul class="list_value">
+                                        <li>ani01</li>
+                                        <li>ani02</li>
+                                        <li>ani03</li>
+                                    </ul>
+                                </td>
+                                <td>
+                                    <p>animation 효과를 지정합니다.</p>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <p class="badge plugin"></p>
+                                </td>
+                                <td>
+                                    <p>design</p>
+                                </td>
+                                <td>
+                                    <ul class="list_value">
+                                        <li class="defult">defult</li>
+                                        <li>underline</li>
+                                        <li class="dis">type03</li>
+                                    </ul>
+                                </td>
+                                <td>
+                                    <p>제공하는 디자인중 선택합니다.</p>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <p class="badge plugin"></p>
+                                </td>
+                                <td>
+                                    <p>rendertype</p>
+                                </td>
+                                <td>
+                                    <ul class="list_value">
+                                        <li class="defult">component</li>
+                                        <li>native</li>
+                                    </ul>
+                                </td>
+                                <td>
+                                    <p>랜더링 되는 방법을 선택합니다.</p>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <p class="badge acc"></p>
+                                </td>
+                                <td>
+                                    <p>tabindex</p>
+                                </td>
+                                <td>
+                                </td>
+                                <td>
+                                    <p>탭 이동용 tabindex를 설정 합니다.</p>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <p class="badge acc"></p>
+                                </td>
+                                <td>
+                                    <p>role</p>
+                                </td>
+                                <td>
+                                </td>
+                                <td>
+                                    <p>접근성용 role을 설정합니다.</p>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </section>
+                <section class="box_tbl">
+                    <div class="box_tit">
+                        <h3>사용된 접근성</h3>
+                        <div class="right">
+                            <p class="badge html"></p>
+                            <span>: 태그 속성</span>
+                            <p class="badge plugin"></p>
+                            <span>: 기능 속성</span>
+                            <p class="badge acc"></p>
+                            <span>: 웹접근성 속성</span>
+                        </div>
+                    </div>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th></th>
+                                <th>Attribute(속성)</th>
+                                <th>Value(값)</th>
+                                <th>Description(설명)</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>
+                                    <p class="badge html"></p>
+                                </td>
+                                <td>
+                                    <p>role="input"</p>
+                                </td>
+                                <td></td>
+                                <td>
+                                    <p>role속성을 통해 해당 요소가 input임을 알려줍니다.</p>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <p class="badge acc"></p>
+                                </td>
+                                <td>
+                                    <p>tabindex</p>
+                                </td>
+                                <td>
+                                </td>
+                                <td>
+                                    <p>탭 이동용 tabindex를 설정 합니다.</p>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <p class="badge acc"></p>
+                                </td>
+                                <td>
+                                    <p>role</p>
+                                </td>
+                                <td>
+                                </td>
+                                <td>
+                                    <p>접근성용 role을 설정합니다.</p>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </section>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

@@ -1,5 +1,9 @@
 @charset "UTF-8";
 
+/* ipt_text */
+@import url(../../component/input_textfield/input_textfield.css);
+
+
 /* 레이아웃 */
 .wrap {display: flex;flex-direction: column;height: 100%;} 
 .wrap:after { content: ''; display: block; clear: both; } 
@@ -177,65 +181,6 @@ aside .nav_menu ul ul li> a:hover { color: #4B4B4B;background-color:#e9e9e9}
     li:nth-child(9){background-color: var(--secondary-900);}
 }
 
-/* ipt_text */
-:root{
-    --input-height: 40px;
-    --input-pd: 8px;
-    --input-bd-width: 1px;
-    --input-bd-radius: 4px;
-    --input-bd-type: solid;
-    --input-bd-color: #d91919;
-    --input-font-size: 16px;
-    --input-font-weight: 400;
-    --input-font-color: #333;
-    --input-placeholer-color: #bbb;
-    --input-lineheight: 1.2;
-
-    --input-bg-color-readonly: #f0f0f0;
-    --input-font-color-readonly: #aaa;
-    --input-bd-color-disabled: #e9e9e9;
-    --input-font-color-disabled: #bbb;
-
-    --aa : #fff
-}
-.grp_component {
-    &{}
-
-    [class*=BMipt] > input{width:100%;height: var(--input-height);padding:var(--input-pd);border: var(--input-bd-width) var(--input-bd-type) var(--input-bd-color);border-radius: var(--input-bd-radius);font-size:var(--input-font-size);font-weight: var(--input-font-weight);color:var(--input-font-color);line-height: var(--input-lineheight);box-sizing: border-box;}
-
-    /* 디자인 */
-    [class*=BMipt].underline input{border:0;border-bottom: var(--input-bd-width) var(--input-bd-type) var(--input-bd-color);border-radius:0;}
-
-    /* 상태속성 */
-    [class*=BMipt] input::placeholder{color:var(--input-placeholer-color)}
-    [class*=BMipt] input:read-only{background-color: var(--input-bg-color-readonly);color:var(--input-font-color-readonly)}
-    [class*=BMipt] input:disabled{background-color: var(--input-bg-color-disabled);color:var(--input-font-color-disabled)}
-
-    /* 애니메이션 */
-    [class*=BMipt].ani01{transition: 0.3s all;border-radius: var(--input-bd-radius);}
-    [class*=BMipt].ani01:hover{box-shadow: 0px 3px 10px rgba(0,0,0,0.15);}
-    [class*=BMipt].ani01:has(input:focus){box-shadow: 0px 4px 15px rgba(0,0,0,0.25);scale:1.01;}
-    [class*=BMipt].ani01 input:focus{outline: none;}
-
-    [class*=BMipt].ani02 {position: relative;overflow: hidden;}
-    [class*=BMipt].ani02 input{transition: 0.3s all;}
-    [class*=BMipt].ani02::before{content:'';position: absolute;left:0px;bottom: 0px;width: 0%;height: 4px;border-bottom: 2px solid var(--primary-500);transition: 0.3s all;border-radius: 0 0 var(--input-bd-radius) var(--input-bd-radius);}
-    [class*=BMipt].ani02:hover::before {width: 100%;}
-    [class*=BMipt].ani02 input:focus{outline: none;box-shadow: inset 0 0 0 1px var(--primary-500);}
-
-    [class*=BMipt].ani03 {position: relative;overflow: hidden;background: #fff;border-radius: var(--input-bd-radius);}
-    [class*=BMipt].ani03 input{position: relative;;background: transparent;transition: 0.3s all;z-index: 1;}
-    [class*=BMipt].ani03::before{content:'';position: absolute;left:0;top: 0;width: 0%;height: 100%;background: #f5f2fb;transition: 0.3s all;z-index: 0;}
-    [class*=BMipt].ani03:hover::before {width: 100%}
-    [class*=BMipt].ani03::after{content:'';position: absolute;left:0;top: 0;width: 0%;height: 100%;background: #efe9fa;transition: 0.3s all;z-index: 0;}
-    [class*=BMipt].ani03:has(input:focus)::after {width: 100%}
-    [class*=BMipt].ani03 input:focus{outline: none;box-shadow: inset 0 0 0 1px var(--primary-500);}
-
-    [class*=BMipt].underline.ani02::before,
-    [class*=BMipt].underline.ani03,
-    [class*=BMipt].ani03::before,
-    [class*=BMipt].ani03::after{border-radius: 0;}
-}
 
 
 /* ipt check */
@@ -400,21 +345,22 @@ navigation: auto;
 /* 페이지 전환 애니메이션 정의 */
 @keyframes fade-out {
 from { opacity: 1; left:0}
-to { opacity: 1; left:-400px}
+to { opacity: 0; left:-400px}
 }
 @keyframes fade-in {
-from { opacity: 1; left:400px }
-to { opacity: 1;left:0px }
+from { opacity: 0; left:400px;}
+to { opacity: 1;left:0px;}
 }
 
 /* 이전 페이지 전환 효과 */
 ::view-transition-old(root) {
-animation: 0.5s ease-out both fade-out;
+animation: 0.5s linear both fade-out;
 }
 
 /* 새 페이지 전환 효과 */
 ::view-transition-new(root) {
-animation: 0.5s ease-in both fade-in;
+  z-index: 10;
+animation: 0.5s linear  both fade-in;
 }
 
 /* 특정 요소에 대한 개별 전환 효과 */
