@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16">
+  <g id="그룹_165455" data-name="그룹 165455" transform="translate(-1631 -392)">
+    <rect id="사각형_2843" data-name="사각형 2843" width="16" height="16" transform="translate(1631 392)" fill="rgba(184,74,74,0)"/>
+    <g id="사각형_2900" data-name="사각형 2900" transform="translate(1638 392) rotate(90)" fill="rgba(255,255,255,0)" stroke="#a7b1bb" stroke-linejoin="round" stroke-width="1">
+      <rect width="9" height="6" rx="1" stroke="none"/>
+      <rect x="0.5" y="0.5" width="8" height="5" rx="0.5" fill="none"/>
+    </g>
+    <g id="사각형_2901" data-name="사각형 2901" transform="translate(1645 392) rotate(90)" fill="#dce0e4" stroke="#212b36" stroke-linejoin="round" stroke-width="1">
+      <rect width="10" height="6" rx="1" stroke="none"/>
+      <rect x="0.5" y="0.5" width="9" height="5" rx="0.5" fill="none"/>
+    </g>
+    <g id="그룹_165454" data-name="그룹 165454" transform="translate(-9888 521) rotate(90)">
+      <path id="선_212" data-name="선 212" d="M0,7.5A.5.5,0,0,1-.5,7V0A.5.5,0,0,1,0-.5.5.5,0,0,1,.5,0V7A.5.5,0,0,1,0,7.5Z" transform="translate(-115.5 -11528.5)" fill="#212b36"/>
+      <path id="선_213" data-name="선 213" d="M0,2.5a.5.5,0,0,1-.354-.146.5.5,0,0,1,0-.707l2-2a.5.5,0,0,1,.707,0,.5.5,0,0,1,0,.707l-2,2A.5.5,0,0,1,0,2.5Z" transform="translate(-117.5 -11528.5)" fill="#212b36"/>
+      <path id="선_214" data-name="선 214" d="M2,2.5a.5.5,0,0,1-.354-.146l-2-2a.5.5,0,0,1,0-.707.5.5,0,0,1,.707,0l2,2A.5.5,0,0,1,2,2.5Z" transform="translate(-115.5 -11528.5)" fill="#212b36"/>
+    </g>
+  </g>
+</svg>
